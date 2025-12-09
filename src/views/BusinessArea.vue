@@ -102,7 +102,11 @@ const maintenanceItems = ref([
         <div class="wrapper">
           <ul class="sub-menu-list">
             <li><router-link to="/business" class="sub-menu-link active">사업영역</router-link></li>
-            <li><router-link to="/solution/ai" class="sub-menu-link">솔루션</router-link></li>
+            <li><router-link to="/business/solution" class="sub-menu-link">솔루션</router-link></li>
+            <li><router-link to="/business/dev" class="sub-menu-link">SI개발</router-link></li>
+            <li>
+              <router-link to="/business/maintenance" class="sub-menu-link">유지보수</router-link>
+            </li>
           </ul>
         </div>
       </div>
