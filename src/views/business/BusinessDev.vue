@@ -24,14 +24,6 @@ const serviceList = ref([
 <template>
   <div class="development-page">
     <div class="sub-visual">
-      <div class="visual-bg" style="background-image: url('/image/sub/sub_visual_img_bg.png')">
-        <div class="overlay">
-          <div class="visual-content wrapper">
-            <h1 class="visual-title">사업영역</h1>
-          </div>
-        </div>
-      </div>
-
       <div class="sub-menu-bar">
         <div class="wrapper">
           <ul class="sub-menu-list">
