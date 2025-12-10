@@ -50,9 +50,10 @@ const farmFeatures = [
   <div class="maintenance-page">
     <div class="sub-visual">
       <div class="visual-bg" style="background-image: url('/image/sub/sub_visual_img_bg.png')">
-        <div class="overlay"></div>
-        <div class="visual-content wrapper">
-          <h1 class="visual-title">사업영역</h1>
+        <div class="overlay">
+          <div class="visual-content wrapper">
+            <h1 class="visual-title">사업영역</h1>
+          </div>
         </div>
       </div>
 
@@ -229,9 +230,13 @@ const farmFeatures = [
 }
 
 .overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
   position: absolute;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.6);
+  background-color: rgba(15, 23, 42, 0.6); /* slate-900 opacity-60 */
 }
 
 .visual-content {
@@ -268,6 +273,7 @@ const farmFeatures = [
 }
 
 .sub-menu-link {
+  white-space: nowrap;
   display: block;
   padding: 1rem 2rem;
   font-weight: 600;

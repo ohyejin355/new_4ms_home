@@ -14,7 +14,9 @@ import Header from './components/Header.vue'
   </div>
 </template>
 
-<style scoped>
+<style>
+@import './css/reset.css';
+
 .app-wrapper {
   display: flex;
   flex-direction: column;
