@@ -46,23 +46,6 @@ const serviceItems = ref([
 
 <template>
   <div class="consulting-page">
-    <div class="sub-visual">
-      <div class="sub-menu-bar">
-        <div class="wrapper">
-          <ul class="sub-menu-list">
-            <li><router-link to="/business" class="sub-menu-link">사업영역</router-link></li>
-            <li>
-              <router-link to="/business/solution" class="sub-menu-link active">솔루션</router-link>
-            </li>
-            <li><router-link to="/business/dev" class="sub-menu-link">SI개발</router-link></li>
-            <li>
-              <router-link to="/business/maintenance" class="sub-menu-link">유지보수</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <section class="section">
       <div class="wrapper">
         <div class="page-header text-center">
