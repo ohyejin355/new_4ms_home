@@ -12,27 +12,38 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      components: {
+        default: HomeView
+      },
+    },
+    {
+      path: '/company',
+      name: 'about',
+      components: {
+      },
     },
     {
       path: '/business',
       name: 'business',
-      component: BusinessArea,
+      components: {
+        default: BusinessArea,
+        business: BusinessArea,
+        solution: BusinessConsulting,
+        dev: BusinessDev,
+        maintenance: BusinessMaintenance,
+      },
     },
     {
-      path: '/business/solution',
-      name: 'BusinessConsulting',
-      component: BusinessConsulting,
+      path: '/solution',
+      name: 'solution',
+      components: {
+      },
     },
     {
-      path: '/business/dev',
-      name: 'BusinessDev',
-      component: BusinessDev,
-    },
-    {
-      path: '/business/maintenance',
-      name: 'BusinessMaintenance',
-      component: BusinessMaintenance,
+      path: '/project',
+      name: 'project',
+      components: {
+      },
     },
   ],
 })
