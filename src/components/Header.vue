@@ -3,9 +3,9 @@
     <div class="container">
       <div class="layout-pc">
         <router-link to="/"
-          ><span class="logo">4MS<span class="logo-dot">.</span></span></router-link
+          ><span class="logo dragging-disable">4MS<span class="logo-dot">.</span></span></router-link
         >
-        <nav class="global-navigation">
+        <nav class="global-navigation dragging-disable">
           <router-link
             class="global-navigation-button"
             v-for="item in menu"
@@ -14,7 +14,7 @@
             >{{ item.name }}</router-link
           >
         </nav>
-        <router-link class="global-navigation-contact" to="/company">CONTACT</router-link>
+        <router-link class="global-navigation-contact dragging-disable" to="/company">CONTACT</router-link>
       </div>
       <div class="layout-mobile">
         <router-link to="/"
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="sub-menu-bar">
+    <div class="sub-menu-bar dragging-disable">
       <div class="wrapper">
         <ul class="sub-menu-list">
           <li
@@ -116,22 +116,24 @@ header {
   transition-duration: 300ms;
 }
 
-header div.container:has(> .layout-pc) {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  height: 5rem;
-  align-items: center;
-}
-
-header div.container:has(> .layout-mobile) {
+header div.container {
   max-width: 80rem;
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   height: 5rem;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  header div.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 5rem;
+    align-items: center;
+  }
 }
 
 header div.container > .layout-pc,
@@ -146,7 +148,6 @@ header a {
   text-decoration: none;
 }
 header .logo {
-  font-family: 'NanumGothic', sans-serif;
   z-index: 50;
   font-weight: 900;
   color: rgb(30, 41, 59, 1);
@@ -287,12 +288,6 @@ header .mobile-menu-container {
 /* =========================================
    2. Sub Visual (Header Image)
    ========================================= */
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 .sub-visual {
   position: relative;
   margin-top: 5rem;
@@ -339,6 +334,7 @@ header .mobile-menu-container {
   color: white;
   font-size: 1.875rem;
   font-weight: 900;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -354,6 +350,7 @@ header .mobile-menu-container {
 }
 
 .sub-menu-list {
+  height: 4rem;
   display: flex;
   justify-content: center;
   list-style: none;
@@ -363,9 +360,9 @@ header .mobile-menu-container {
 
 .sub-menu-link {
   white-space: nowrap;
-  display: block;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
+  line-height: 3rem;
   color: #64748b;
   text-decoration: none;
   border-bottom: 2px solid transparent;
