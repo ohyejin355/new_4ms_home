@@ -99,8 +99,6 @@
         </div>
       </section>
     </main>
-
-    <footer class="placeholder-footer">Footer Include Area</footer>
   </div>
 </template>
 

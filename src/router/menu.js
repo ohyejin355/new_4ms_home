@@ -47,9 +47,9 @@ export default {
           title: '사업영역',
           menu: [
             { menuId: 'BUS_01', name: '사업영역', componentName: 'business' },
-            { menuId: 'BUS_02', name: '솔루션', componentName: 'solution' },
+            { menuId: 'BUS_02', name: 'SI컨설팅', componentName: 'solution' },
             { menuId: 'BUS_03', name: 'SI개발', componentName: 'dev' },
-            { menuId: 'BUS_04', name: '유지보수', componentName: 'maintenance' },
+            { menuId: 'BUS_04', name: 'SI운영', componentName: 'maintenance' },
           ],
         },
       },
