@@ -19,12 +19,11 @@
  * TO-DO: DB 연동 필요
  */
 
-import { ref, watch, inject } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, watch, inject } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
   install: (app) => {
-
     // TO-DO: 메뉴 데이터 DB 연동
     const menu = ref([
       {
@@ -38,8 +37,8 @@ export default {
             { menuId: 'COM_03', name: '회사연혁' },
             { menuId: 'COM_04', name: '조직도' },
             { menuId: 'COM_05', name: '오시는길' },
-          ]
-        }
+          ],
+        },
       },
       {
         name: 'Business',
@@ -51,8 +50,8 @@ export default {
             { menuId: 'BUS_02', name: '솔루션', componentName: 'solution' },
             { menuId: 'BUS_03', name: 'SI개발', componentName: 'dev' },
             { menuId: 'BUS_04', name: '유지보수', componentName: 'maintenance' },
-          ]
-        }
+          ],
+        },
       },
       {
         name: 'Solutions',
@@ -60,10 +59,10 @@ export default {
         subMenu: {
           title: '솔루션',
           menu: [
-            { menuId: 'SOL_01', name: 'able bot' },
-            { menuId: 'SOL_02', name: '샐리플랜' },
-          ]
-        }
+            { menuId: 'SOL_01', name: 'able bot', componentName: 'Ablebot1' },
+            { menuId: 'SOL_02', name: 'sally plan', componentName: 'SallyPlan' },
+          ],
+        },
       },
       {
         name: 'Project',
@@ -73,35 +72,41 @@ export default {
           menu: [
             { menuId: 'PJT_01', name: '주요프로젝트' },
             { menuId: 'PJT_02', name: '주요협력사' },
-          ]
-        }
+          ],
+        },
       },
-    ]);
-    const currentMenu = ref({});
-    const currentSubMenu = ref({});
+    ])
+    const currentMenu = ref({})
+    const currentSubMenu = ref({})
 
-    app.provide('menu', menu);
-    app.provide('currentMenu', currentMenu);
-    app.provide('currentSubMenu', currentSubMenu);
+    app.provide('menu', menu)
+    app.provide('currentMenu', currentMenu)
+    app.provide('currentSubMenu', currentSubMenu)
 
-    app.config.globalProperties.$menu = menu;
-    app.config.globalProperties.$currentMenu = currentMenu;
-    app.config.globalProperties.$currentSubMenu = currentSubMenu;
-
+    app.config.globalProperties.$menu = menu
+    app.config.globalProperties.$currentMenu = currentMenu
+    app.config.globalProperties.$currentSubMenu = currentSubMenu
   },
   setup() {
-    const route = useRoute();
-    const menu = inject('menu');
-    const currentMenu = inject('currentMenu');
-    const currentSubMenu = inject('currentSubMenu');
+    const route = useRoute()
+    const menu = inject('menu')
+    const currentMenu = inject('currentMenu')
+    const currentSubMenu = inject('currentSubMenu')
 
-    watch(() => route.fullPath, () => {
-      currentMenu.value = menu.value.filter(o => o.path === route.path)[0];
-      if(route.query.menuId){
-        currentSubMenu.value = currentMenu.value.subMenu.menu.filter(o => o.menuId === route.query.menuId)[0];
-      } else {
-        currentSubMenu.value = currentMenu.value ? currentMenu.value.subMenu.menu[0] : { menuId: '', name: 'home', componentName: 'default' };
-      }
-    });
-  }
+    watch(
+      () => route.fullPath,
+      () => {
+        currentMenu.value = menu.value.filter((o) => o.path === route.path)[0]
+        if (route.query.menuId) {
+          currentSubMenu.value = currentMenu.value.subMenu.menu.filter(
+            (o) => o.menuId === route.query.menuId,
+          )[0]
+        } else {
+          currentSubMenu.value = currentMenu.value
+            ? currentMenu.value.subMenu.menu[0]
+            : { menuId: '', name: 'home', componentName: 'default' }
+        }
+      },
+    )
+  },
 }

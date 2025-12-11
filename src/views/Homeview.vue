@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-// Business Items: 데이터에서 Tailwind 클래스를 제거하고 'type'으로 구분합니다.
+// Business Items
 const businessItems = ref([
   {
     title: 'IT Consulting',
@@ -9,7 +9,7 @@ const businessItems = ref([
     tags: ['금융', '유통/물류', '회계/세무'],
     iconPath:
       'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
-    type: 'light', // CSS 클래스 매핑용
+    type: 'light',
   },
   {
     title: 'Maintenance',
@@ -21,12 +21,12 @@ const businessItems = ref([
   },
 ])
 
-// Solutions Items: Tailwind 클래스 대신 의미 있는 클래스명(theme-teal 등)으로 변경
+// Solutions Items
 const solutions = ref([
   {
     title: 'ABLEBOT',
     label: 'AI Chatbot',
-    theme: 'theme-teal', // CSS에서 색상 제어
+    theme: 'theme-teal',
     desc: '상황 인지 기반의 **AI 챗봇 솔루션**입니다. 사용자의 의도를 유연하게 판단하는 딥러닝 엔진을 통해 24시간 끊김 없는 고객 응대를 실현합니다.',
     features: ['자연어 처리 기반 의도 파악', '지속적 학습을 통한 품질 향상'],
   },
@@ -50,7 +50,7 @@ const solutions = ref([
           <h1 class="hero-title">
             We Create <br class="pc-only" />
             <span class="gradient-text">Future Value</span><br class="mobile-only" />
-            with IT Technology
+            with <br />IT Technology
           </h1>
           <p class="hero-desc">
             포엠에스는 사람 중심의 철학으로 AI, 빅데이터, 스마트팜 등<br class="pc-only" />
@@ -63,7 +63,7 @@ const solutions = ref([
         </div>
       </div>
       <div class="scroll-down pc-only">
-        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="icon bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -94,7 +94,7 @@ const solutions = ref([
           </div>
 
           <div class="about-text-col">
-            <h2 class="section-subtitle">Who We Are</h2>
+            <h2 class="section-subtitle text-primary">Who We Are</h2>
             <h3 class="section-title">미래를 창조하는<br />주식회사 포엠에스</h3>
             <p class="text-block">
               포엠에스는 <strong>'사람 중심'</strong>의 기업 철학을 바탕으로 설립되었습니다.
@@ -112,13 +112,35 @@ const solutions = ref([
                 :key="item"
                 class="feature-item"
               >
-                <div class="feature-icon">
+                <div class="feature-icon text-primary">
                   <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
+                      v-if="item === '전문가 중심'"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M5 13l4 4L19 7"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                    <path
+                      v-else-if="item === '고객 중심'"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                    <path
+                      v-else-if="item === '기술 혁신'"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    ></path>
+                    <path
+                      v-else
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
                     ></path>
                   </svg>
                 </div>
@@ -133,7 +155,7 @@ const solutions = ref([
     <section id="business" class="section business-section">
       <div class="wrapper">
         <div class="text-center">
-          <h2 class="section-subtitle">Our Business</h2>
+          <h2 class="section-subtitle text-primary">Our Business</h2>
           <h3 class="section-title">통합 IT 서비스를 제공합니다</h3>
           <p class="section-desc">
             컨설팅부터 개발, 유지보수까지 고객의 비즈니스 성공을 위한 A to Z를 책임집니다.
@@ -141,9 +163,9 @@ const solutions = ref([
         </div>
 
         <div class="business-grid">
-          <div class="biz-card card-light wide-card">
+          <div class="biz-card card-light wide-card group">
             <div class="card-content">
-              <div class="card-icon-box">
+              <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
@@ -175,7 +197,7 @@ const solutions = ref([
               </div>
               <h4 class="card-title">System Dev.</h4>
               <p class="card-desc">
-                정보시스템 진단, 설계 및 최적의 시스템 구축을 통한 경쟁력 강화
+                정보시스템 진단, 설계 및 최적의 시스템 구축을 통한<br />경쟁력 강화
               </p>
             </div>
           </div>
@@ -197,9 +219,9 @@ const solutions = ref([
             </div>
           </div>
 
-          <div class="biz-card card-light wide-card">
+          <div class="biz-card card-light wide-card group">
             <div class="card-content">
-              <div class="card-icon-box">
+              <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
@@ -226,7 +248,7 @@ const solutions = ref([
 
       <div class="wrapper relative">
         <div class="text-center">
-          <h2 class="section-subtitle">Our Solutions</h2>
+          <h2 class="section-subtitle text-primary">Our Solutions</h2>
           <h3 class="section-title">혁신 기술 솔루션</h3>
           <p class="section-desc">
             AI와 빅데이터 기술이 집약된 포엠에스만의 솔루션으로 비즈니스의 새로운 가능성을 엽니다.
@@ -267,37 +289,61 @@ const solutions = ref([
 /* =========================================
    1. Reset & Common Styles
    ========================================= */
+/* 폰트 설정 (Open Sans, Montserrat) - CDN 등을 통해 불러와야 함 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open Sans:wght@400;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 .container-wrapper {
-  background-color: #f9fafb; /* gray-50 */
+  background-color: #f9fafb; /* bg-gray-50 */
   min-height: 100vh;
-  font-family: 'NanumGothic', sans-serif; /* 폰트가 있다면 */
-  color: #1e293b; /* slate-800 */
+  font-family: 'Open Sans', sans-serif;
+  color: #334155; /* Slate-700 */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
-  max-width: 1280px;
+  max-width: 1280px; /* max-w-7xl */
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; /* px-6 */
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 0 2rem; /* lg:px-8 */
+  }
+}
+
 .section {
-  padding: 4rem 0;
+  padding: 4rem 0; /* py-16 */
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 6rem 0;
+    padding: 6rem 0; /* md:py-24 */
   }
 }
 
 .text-center {
   text-align: center;
 }
+
+/* Colors */
+.text-primary {
+  color: #115e59;
+} /* Teal-800 */
+.bg-primary {
+  background-color: #0f766e;
+} /* Teal-700 */
 
 /* SVG Icons */
 .icon {
@@ -327,37 +373,36 @@ const solutions = ref([
    2. Typography
    ========================================= */
 .section-subtitle {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0d9488; /* teal-600 */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em; /* tracking-widest */
+  margin-bottom: 0.5rem; /* mb-2 */
 }
 
 @media (min-width: 768px) {
   .section-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* md:text-sm */
   }
 }
 
 .section-title {
-  font-size: 1.875rem;
-  font-weight: 900;
-  color: #0f172a; /* slate-900 */
-  margin-bottom: 1.5rem;
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 900; /* font-black */
+  color: #0f172a; /* text-slate-900 */
+  margin-bottom: 1.5rem; /* mb-6 */
   line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 2.25rem;
+    font-size: 2.25rem; /* md:text-4xl */
   }
 }
 
 .section-desc {
-  color: #475569; /* slate-600 */
-  font-size: 0.875rem;
+  color: #475569; /* text-slate-600 */
+  font-size: 0.875rem; /* text-sm */
   max-width: 42rem;
   margin: 1rem auto 0;
   line-height: 1.6;
@@ -365,7 +410,7 @@ const solutions = ref([
 
 @media (min-width: 768px) {
   .section-desc {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
   }
 }
 
@@ -374,25 +419,37 @@ const solutions = ref([
    ========================================= */
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* h-screen */
   display: flex;
   align-items: center;
   background-color: #1a202c;
   overflow: hidden;
+
+  /* Background Image Setting */
+  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
 }
 
-/* Hero Background Gradient */
+/* PC Parallax Effect */
+@media (min-width: 768px) {
+  .hero-section {
+    background-attachment: fixed;
+  }
+}
+
+/* Hero Background Gradient Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8));
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
   z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
-  padding-top: 4rem;
+  padding-top: 4rem; /* pt-16 */
 }
 
 @media (min-width: 768px) {
@@ -401,65 +458,70 @@ const solutions = ref([
   }
 }
 
+.hero-text-box {
+  max-width: 48rem; /* max-w-3xl */
+}
+
 .badge-outline {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  background-color: rgba(20, 184, 166, 0.2); /* teal-500/20 */
-  color: #5eead4; /* teal-300 */
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem; /* py-1 px-3 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(20, 184, 166, 0.2); /* bg-teal-500/20 */
+  color: #5eead4; /* text-teal-300 */
+  font-size: 0.625rem; /* text-[10px] */
+  font-weight: 700; /* font-bold */
+  letter-spacing: 0.1em; /* tracking-widest */
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(20, 184, 166, 0.3);
+  margin-bottom: 1rem; /* mb-4 */
+  border: 1px solid rgba(20, 184, 166, 0.3); /* border-teal-500/30 */
 }
 
 @media (min-width: 768px) {
   .badge-outline {
-    font-size: 0.75rem;
+    font-size: 0.75rem; /* md:text-xs */
   }
 }
 
 .hero-title {
-  font-size: 2.25rem;
-  font-weight: 900;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900; /* font-black */
   color: white;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  line-height: 1.25; /* leading-tight */
+  margin-bottom: 1.5rem; /* mb-6 */
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 4.5rem; /* md:text-7xl */
   }
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #2dd4bf, #67e8f9); /* teal-400 to cyan-300 */
+  background: linear-gradient(to right, #2dd4bf, #67e8f9); /* from-teal-400 to-cyan-300 */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-weight: 900;
 }
 
 .hero-desc {
-  color: #cbd5e1; /* slate-300 */
-  font-size: 1rem;
-  margin-bottom: 2.5rem;
-  max-width: 36rem;
-  line-height: 1.8;
+  color: #cbd5e1; /* text-slate-300 */
+  font-size: 1rem; /* text-base */
+  margin-bottom: 2.5rem; /* mb-10 */
+  max-width: 36rem; /* max-w-xl */
+  line-height: 2; /* leading-loose */
 }
 
 @media (min-width: 768px) {
   .hero-desc {
-    font-size: 1.125rem;
+    font-size: 1.125rem; /* md:text-lg */
   }
 }
 
 .hero-buttons {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1rem; /* gap-4 */
 }
 
 @media (min-width: 768px) {
@@ -469,9 +531,9 @@ const solutions = ref([
 }
 
 .btn {
-  padding: 1rem 2rem;
-  font-weight: 700;
-  border-radius: 0.5rem;
+  padding: 1rem 2rem; /* px-8 py-4 */
+  font-weight: 700; /* font-bold */
+  border-radius: 0.5rem; /* rounded-lg */
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -479,14 +541,14 @@ const solutions = ref([
 }
 
 .btn-primary {
-  background-color: #0d9488; /* teal-600 */
+  background-color: #0f766e; /* bg-primary (Teal-700) */
   color: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
 }
 
 .btn-primary:hover {
-  background-color: #0f766e; /* teal-700 */
-  transform: translateY(-4px);
+  background-color: #0f766e; /* hover:bg-teal-700 (기존과 동일하지만 transform 효과) */
+  transform: translateY(-4px); /* hover:-translate-y-1 (약간 더 줌) */
 }
 
 .btn-outline {
@@ -496,12 +558,12 @@ const solutions = ref([
 
 .btn-outline:hover {
   background-color: white;
-  color: #0f172a;
+  color: #0f172a; /* hover:text-slate-900 */
 }
 
 .scroll-down {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2.5rem; /* bottom-10 */
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -533,43 +595,37 @@ const solutions = ref([
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 3rem; /* gap-12 */
   align-items: center;
 }
 
 @media (min-width: 1024px) {
   .about-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1fr; /* lg:grid-cols-2 */
+    gap: 4rem; /* lg:gap-16 */
   }
 }
 
 .about-image-col {
   position: relative;
-  order: 1;
-}
-@media (min-width: 1024px) {
-  .about-image-col {
-    order: 1;
-  }
+  order: 1; /* order-1 */
 }
 
 .about-text-col {
-  order: 2;
-  margin-top: 2rem;
+  order: 2; /* order-2 */
+  margin-top: 2rem; /* mt-8 */
 }
 @media (min-width: 1024px) {
   .about-text-col {
-    order: 2;
-    margin-top: 0;
+    margin-top: 0; /* lg:mt-0 */
   }
 }
 
 .about-img {
   position: relative;
   z-index: 10;
-  border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -584,108 +640,125 @@ const solutions = ref([
 /* Blobs behind image */
 .blob {
   position: absolute;
-  border-radius: 9999px;
+  border-radius: 9999px; /* rounded-full */
   z-index: 0;
 }
 .blob-teal {
-  top: -1rem;
-  left: -1rem;
-  width: 6rem;
-  height: 6rem;
-  background-color: #ccfbf1; /* teal-100 */
+  top: -1rem; /* -top-4 */
+  left: -1rem; /* -left-4 */
+  width: 6rem; /* w-24 */
+  height: 6rem; /* h-24 */
+  background-color: #ccfbf1; /* bg-teal-100 */
 }
 .blob-gray {
-  bottom: -1rem;
-  right: -1rem;
-  width: 10rem;
-  height: 10rem;
-  background-color: #f1f5f9; /* slate-100 */
+  bottom: -1rem; /* -bottom-4 */
+  right: -1rem; /* -right-4 */
+  width: 10rem; /* w-40 */
+  height: 10rem; /* h-40 */
+  background-color: #f1f5f9; /* bg-slate-100 */
 }
 
 .stat-card {
   position: absolute;
-  bottom: -1.5rem;
-  right: 1rem;
+  bottom: -1.5rem; /* -bottom-6 */
+  right: 1rem; /* right-4 */
   z-index: 20;
   background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #14b8a6; /* teal-500 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  border-left: 4px solid #14b8a6; /* border-teal-500 */
 }
 
 @media (min-width: 768px) {
   .stat-card {
-    right: auto;
-    left: -2.5rem;
-    bottom: 2.5rem;
+    right: auto; /* md:right-auto */
+    left: -2.5rem; /* md:-left-10 */
+    bottom: 2.5rem; /* md:bottom-10 */
   }
 }
 
 .stat-label {
-  font-size: 0.75rem;
-  color: #64748b;
-  font-weight: 700;
+  font-size: 0.75rem; /* text-xs */
+  color: #64748b; /* text-slate-500 */
+  font-weight: 700; /* font-bold */
   text-transform: uppercase;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .stat-label {
+    font-size: 0.875rem; /* md:text-sm */
+  }
+}
+
 .stat-number {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #1e293b;
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 900; /* font-black */
+  color: #1e293b; /* text-slate-800 */
   margin: 0;
 }
 @media (min-width: 768px) {
   .stat-number {
-    font-size: 1.875rem;
+    font-size: 1.875rem; /* md:text-3xl */
   }
 }
+
 .stat-desc {
-  font-size: 0.75rem;
-  color: #475569;
+  font-size: 0.75rem; /* text-xs */
+  color: #475569; /* text-slate-600 */
   margin: 0;
+}
+@media (min-width: 768px) {
+  .stat-desc {
+    font-size: 0.875rem; /* md:text-sm */
+  }
 }
 
 .text-block {
-  color: #475569;
-  margin-bottom: 1.5rem;
-  line-height: 1.625;
-  font-size: 0.875rem;
+  color: #475569; /* text-slate-600 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  line-height: 1.625; /* leading-relaxed */
+  font-size: 0.875rem; /* text-sm */
   white-space: pre-line;
 }
 @media (min-width: 768px) {
   .text-block {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
+    margin-bottom: 2rem; /* mb-8 */
   }
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1rem; /* gap-4 */
   margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    gap: 1.5rem; /* md:gap-6 */
+  }
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background-color: rgba(240, 253, 250, 0.5); /* teal-50/50 */
-  border-radius: 0.5rem;
+  gap: 0.75rem; /* space-x-3 */
+  padding: 0.75rem; /* p-3 */
+  background-color: rgba(240, 253, 250, 0.5); /* bg-teal-50/50 */
+  border-radius: 0.5rem; /* rounded-lg */
 }
 
-.feature-icon {
-  color: #0d9488;
-}
 .feature-text {
-  font-weight: 700;
-  color: #1e293b;
-  font-size: 0.875rem;
+  font-weight: 700; /* font-bold */
+  color: #1e293b; /* text-slate-800 */
+  font-size: 0.875rem; /* text-sm */
 }
 @media (min-width: 768px) {
   .feature-text {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
   }
 }
 
@@ -693,26 +766,26 @@ const solutions = ref([
    5. Business Section
    ========================================= */
 .business-section {
-  background-color: #f8fafc; /* slate-50 */
+  background-color: #f8fafc; /* bg-slate-50 */
 }
 
 .business-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1.5rem; /* gap-6 */
   margin-top: 3rem;
 }
 
 @media (min-width: 768px) {
   .business-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
 }
 
 /* Card Common Styles */
 .biz-card {
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 2rem; /* p-8 */
+  border-radius: 1rem; /* rounded-2xl */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -721,7 +794,7 @@ const solutions = ref([
 }
 
 .biz-card:hover {
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem); /* hover:-translate-y-2 (수정) */
 }
 
 .wide-card {
@@ -729,129 +802,130 @@ const solutions = ref([
 }
 @media (min-width: 768px) {
   .wide-card {
-    grid-column: span 2;
+    grid-column: span 2; /* md:col-span-2 */
   }
 }
 
-/* Light Card */
+/* Light Card (Consulting, Maintenance) */
 .card-light {
-  background-color: white;
-  border: 1px solid #f1f5f9;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: white; /* bg-white */
+  border: 1px solid #f1f5f9; /* border-slate-100 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
 }
 
 .card-light:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
 }
 
 .card-light .card-icon-box {
-  background-color: #f1f5f9;
-  color: #334155;
+  background-color: #f1f5f9; /* bg-slate-100 */
+  color: #334155; /* text-slate-700 */
 }
 
-.card-light:hover .card-icon-box {
-  background-color: #0d9488;
-  color: white;
+/* Group hover effect for icon box */
+.group:hover .group-hover-bg-primary {
+  background-color: #0f766e; /* hover:bg-primary (Teal-700) */
+  color: white; /* hover:text-white */
 }
 
 .card-light .card-title {
-  color: #1e293b;
+  color: #1e293b; /* text-slate-800 */
 }
 .card-light .card-desc {
-  color: #475569;
+  color: #475569; /* text-slate-600 */
 }
 
-/* Dark Card */
+/* Dark Card (System Dev.) */
 .card-dark {
-  background-color: #1e293b; /* slate-800 */
-  color: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #1e293b; /* bg-slate-800 */
+  color: white; /* text-white */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
 }
 
 .card-dark .card-icon-box {
-  background-color: #334155;
-  color: #2dd4bf;
+  background-color: #334155; /* bg-slate-700 */
+  color: #2dd4bf; /* text-teal-400 */
 }
 .card-dark .card-title {
   color: white;
 }
 .card-dark .card-desc {
-  color: #cbd5e1;
+  color: #cbd5e1; /* text-slate-300 */
   white-space: pre-line;
 }
 
-/* Primary (Teal) Card */
+/* Primary (Teal) Card (AI Solution) */
 .card-primary {
-  background-color: #0d9488; /* teal-600 */
-  color: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #0d9488; /* bg-teal-600 */
+  color: white; /* text-white */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
 }
 
 .card-primary .card-icon-box {
-  background-color: #14b8a6;
-  color: white;
+  background-color: #14b8a6; /* bg-teal-500 */
+  color: white; /* text-white */
 }
 .card-primary .card-title {
   color: white;
 }
 .card-primary .card-desc {
-  color: #ccfbf1;
+  color: #ccfbf1; /* text-teal-100 */
 }
 
 /* Card Internals */
 .card-icon-box {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  border-radius: 0.5rem; /* rounded-lg */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; /* mb-6 */
   transition: all 0.3s ease;
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.75rem; /* mb-3 */
 }
 @media (min-width: 768px) {
   .card-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* md:text-2xl */
   }
 }
 
 .card-desc {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* text-sm */
   margin: 0;
   line-height: 1.5;
 }
 @media (min-width: 768px) {
   .card-desc {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
   }
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 2rem;
+  gap: 0.5rem; /* gap-2 */
+  margin-top: 2rem; /* mt-8 */
 }
 .tag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  background-color: #f1f5f9;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  color: #475569;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  background-color: #f1f5f9; /* bg-slate-100 */
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  color: #475569; /* text-slate-600 */
 }
 
 /* =========================================
    6. Solutions Section
    ========================================= */
 .solutions-section {
-  background-color: white;
+  background-color: white; /* bg-white */
   position: relative;
   overflow: hidden;
 }
@@ -859,64 +933,81 @@ const solutions = ref([
 /* Background Blobs */
 .bg-blob {
   position: absolute;
-  width: 15rem;
-  height: 15rem;
-  border-radius: 9999px;
-  opacity: 0.1;
-  filter: blur(40px);
+  border-radius: 9999px; /* rounded-full */
+  opacity: 0.1; /* opacity-10 */
+  filter: blur(64px); /* blur-3xl */
 }
 .blob-top-right {
-  top: -5rem;
-  right: -5rem;
-  background-color: #14b8a6; /* teal */
+  top: -5rem; /* -mt-20 */
+  right: -5rem; /* -mr-20 */
+  width: 15rem; /* w-60 */
+  height: 15rem; /* h-60 */
+  background-color: #14b8a6; /* bg-teal-500 */
 }
+@media (min-width: 768px) {
+  .blob-top-right {
+    width: 24rem; /* md:w-96 */
+    height: 24rem; /* md:h-96 */
+  }
+}
+
 .blob-bottom-left {
-  bottom: -5rem;
-  left: -5rem;
-  background-color: #06b6d4; /* cyan */
+  bottom: -5rem; /* -mb-20 */
+  left: -5rem; /* -ml-20 */
+  width: 15rem; /* w-60 */
+  height: 15rem; /* h-60 */
+  background-color: #06b6d4; /* bg-cyan-500 */
+}
+@media (min-width: 768px) {
+  .blob-bottom-left {
+    width: 20rem; /* md:w-80 */
+    height: 20rem; /* md:h-80 */
+  }
 }
 
 .solutions-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2rem; /* gap-8 */
   margin-top: 3rem;
 }
 
 @media (min-width: 768px) {
   .solutions-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr; /* md:grid-cols-2 */
+    gap: 2.5rem; /* md:gap-10 */
   }
 }
 
 .sol-card-wrapper {
-  padding: 4px; /* for border effect */
-  border-radius: 1.5rem;
-  background-color: #e2e8f0;
+  padding: 4px; /* p-1 */
+  border-radius: 1.5rem; /* rounded-3xl */
+  background-color: #e2e8f0; /* bg-slate-200 */
   transition: background 0.5s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Theme Hover Effects */
 .theme-teal:hover {
-  background: linear-gradient(to bottom right, #14b8a6, #06b6d4);
+  background: linear-gradient(to bottom right, #14b8a6, #06b6d4); /* from-teal-500 to-cyan-500 */
 }
 .theme-orange:hover {
-  background: linear-gradient(to bottom right, #fb923c, #ef4444);
+  background: linear-gradient(to bottom right, #fb923c, #ef4444); /* from-orange-400 to-red-500 */
 }
 
 .sol-card-inner {
-  background-color: white;
+  background-color: white; /* bg-white */
   height: 100%;
-  border-radius: 1.25rem;
-  padding: 2rem;
+  border-radius: 1.25rem; /* rounded-[20px] */
+  padding: 2rem; /* p-8 */
   position: relative;
   z-index: 10;
 }
 
 @media (min-width: 768px) {
   .sol-card-inner {
-    padding: 2.5rem;
+    padding: 2.5rem; /* md:p-10 */
   }
 }
 
@@ -924,68 +1015,68 @@ const solutions = ref([
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* mb-8 */
 }
 
 .sol-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: #0f172a; /* text-slate-900 */
   margin: 0;
 }
 @media (min-width: 768px) {
   .sol-title {
-    font-size: 1.875rem;
+    font-size: 1.875rem; /* md:text-3xl */
   }
 }
 
 .sol-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
   text-transform: uppercase;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  letter-spacing: 0.05em; /* tracking-wider */
 }
 
 /* Badge Colors based on parent class */
 .theme-teal .sol-badge {
-  color: #0f766e;
-  background-color: #ccfbf1;
+  color: #0f766e; /* text-teal-700 */
+  background-color: #ccfbf1; /* bg-teal-100 */
 }
 .theme-orange .sol-badge {
-  color: #c2410c;
-  background-color: #ffedd5;
+  color: #c2410c; /* text-orange-700 */
+  background-color: #ffedd5; /* bg-orange-100 */
 }
 
 .sol-desc {
-  color: #475569;
-  margin-bottom: 2rem;
-  line-height: 1.625;
-  font-size: 0.875rem;
+  color: #475569; /* text-slate-600 */
+  margin-bottom: 2rem; /* mb-8 */
+  line-height: 1.625; /* leading-relaxed */
+  font-size: 0.875rem; /* text-sm */
   white-space: pre-line;
 }
 @media (min-width: 768px) {
   .sol-desc {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
   }
 }
 
 .sol-features {
-  border-top: 1px solid #e2e8f0;
-  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0; /* border-slate-200 */
+  padding-top: 1.5rem; /* pt-6 */
   list-style: none;
   padding-left: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  color: #64748b;
-  font-size: 0.875rem;
+  gap: 0.75rem; /* space-y-3 */
+  color: #64748b; /* text-slate-500 */
+  font-size: 0.875rem; /* text-sm */
 }
 @media (min-width: 768px) {
   .sol-features {
-    font-size: 1rem;
+    font-size: 1rem; /* md:text-base */
   }
 }
 
@@ -995,15 +1086,15 @@ const solutions = ref([
 }
 
 .dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  margin-right: 0.75rem;
+  width: 0.5rem; /* w-2 */
+  height: 0.5rem; /* h-2 */
+  border-radius: 50%; /* rounded-full */
+  margin-right: 0.75rem; /* mr-3 */
 }
 .theme-teal .dot {
-  background-color: #14b8a6;
+  background-color: #14b8a6; /* bg-teal-500 */
 }
 .theme-orange .dot {
-  background-color: #f97316;
+  background-color: #f97316; /* bg-orange-500 */
 }
 </style>

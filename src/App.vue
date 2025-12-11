@@ -1,11 +1,11 @@
 <script setup>
-  import { inject } from 'vue';
-  import menu from './router/menu.js';
-  import Footer from './components/Footer.vue';
-  import Header from './components/Header.vue';
+import { inject } from 'vue'
+import menu from './router/menu.js'
+import Footer from './components/Footer.vue'
+import Header from './components/Header.vue'
 
-  menu.setup();
-  const currentSubMenu = inject('currentSubMenu');
+menu.setup()
+const currentSubMenu = inject('currentSubMenu')
 </script>
 
 <template>
