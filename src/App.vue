@@ -1,20 +1,17 @@
 <script setup>
-import { inject } from 'vue'
-import menu from './router/menu.js'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
-
-menu.setup()
-const currentSubMenu = inject('currentSubMenu')
+import Tab from './components/Tab.vue'
+import { currentSubMenu } from './router/menu';
 </script>
 
 <template>
   <div id="app" class="app-wrapper">
     <Header />
+    <Tab v-if="$route.fullPath !== '/'"/>
     <div class="content">
       <router-view :name="currentSubMenu.componentName" v-slot="{ Component }">
-        <!-- TO-DO: include에는 캐싱할 컴포넌트의 이름 입력 (router/index.js; router.routes.components.name) 추후 수정 필요 -->
-        <keep-alive include="business,solution,dev,maintenance">
+        <keep-alive>
           <component :is="Component" />
         </keep-alive>
       </router-view>

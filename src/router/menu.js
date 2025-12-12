@@ -19,98 +19,61 @@
  * TO-DO: DB 연동 필요
  */
 
-import { ref, watch, inject } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref } from 'vue';
 
-export default {
-  install: (app) => {
-    // TO-DO: 메뉴 데이터 DB 연동
-    const menu = ref([
-      {
-        name: 'About',
-        path: '/company',
-        subMenu: {
-          title: '회사소개',
-          menu: [
-            { menuId: 'COM_01', name: '회사소개' },
-            { menuId: 'COM_02', name: 'CEO인사말' },
-            { menuId: 'COM_03', name: '회사연혁' },
-            { menuId: 'COM_04', name: '조직도' },
-            { menuId: 'COM_05', name: '오시는길' },
-          ],
-        },
-      },
-      {
-        name: 'Business',
-        path: '/business',
-        subMenu: {
-          title: '사업영역',
-          menu: [
-            { menuId: 'BUS_01', name: '사업영역', componentName: 'business' },
-            { menuId: 'BUS_02', name: 'SI컨설팅', componentName: 'solution' },
-            { menuId: 'BUS_03', name: 'SI개발', componentName: 'dev' },
-            { menuId: 'BUS_04', name: 'SI운영', componentName: 'maintenance' },
-          ],
-        },
-      },
-      {
-        name: 'Solutions',
-        path: '/solution',
-        subMenu: {
-          title: '솔루션',
-          menu: [
-            { menuId: 'SOL_01', name: 'able bot', componentName: 'Ablebot1' },
-            { menuId: 'SOL_02', name: 'sally plan', componentName: 'SallyPlan' },
-          ],
-        },
-      },
-      {
-        name: 'Project',
-        path: '/project',
-        subMenu: {
-          title: '프로젝트',
-          menu: [
-            { menuId: 'PJT_01', name: '주요프로젝트', componentName: 'info' },
-            { menuId: 'PJT_02', name: '주요협력사', componentName: 'partner' },
-          ],
-        },
-      },
-    ])
-    const currentMenu = ref({})
-    const currentSubMenu = ref({})
-
-    app.provide('menu', menu)
-    app.provide('currentMenu', currentMenu)
-    app.provide('currentSubMenu', currentSubMenu)
-
-    app.config.globalProperties.$menu = menu
-    app.config.globalProperties.$currentMenu = currentMenu
-    app.config.globalProperties.$currentSubMenu = currentSubMenu
+const menu = ref([
+  {
+    name: 'About',
+    path: '/company',
+    subMenu: {
+      title: '회사소개',
+      menu: [
+        { menuId: 'company_info', name: '회사소개', componentName: 'info' },
+        { menuId: 'company_ceo', name: 'CEO인사말', componentName: 'ceo' },
+        { menuId: 'company_history', name: '회사연혁', componentName: 'history' },
+        { menuId: 'company_organ', name: '조직도', componentName: 'organization' },
+        { menuId: 'company_map', name: '오시는길', componentName: 'map' },
+      ],
+    },
   },
-  setup() {
-    const route = useRoute()
-    const menu = inject('menu')
-    const currentMenu = inject('currentMenu')
-    const currentSubMenu = inject('currentSubMenu')
-
-    watch(
-      () => route.fullPath,
-      () => {
-        currentMenu.value = menu.value.filter((o) => o.path === route.path)[0]
-        if (route.query.menuId) {
-          currentSubMenu.value = currentMenu.value.subMenu.menu.filter(
-            (o) => o.menuId === route.query.menuId,
-          )[0]
-        } else {
-          currentSubMenu.value = currentMenu.value
-            ? currentMenu.value.subMenu.menu[0]
-            : { menuId: '', name: 'home', componentName: 'default' }
-        }
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        })
-      },
-    )
+  {
+    name: 'Business',
+    path: '/business',
+    subMenu: {
+      title: '사업영역',
+      menu: [
+        { menuId: 'BUS_01', name: '사업영역', componentName: 'business' },
+        { menuId: 'BUS_02', name: 'SI컨설팅', componentName: 'solution' },
+        { menuId: 'BUS_03', name: 'SI개발', componentName: 'develop' },
+        { menuId: 'BUS_04', name: 'SI운영', componentName: 'maintenance' },
+      ],
+    },
   },
-}
+  {
+    name: 'Solutions',
+    path: '/solution',
+    subMenu: {
+      title: '솔루션',
+      menu: [
+        { menuId: 'SOL_01', name: 'able bot', componentName: 'ableBot' },
+        { menuId: 'SOL_02', name: 'sally plan', componentName: 'sallyPlan' },
+      ],
+    },
+  },
+  {
+    name: 'Project',
+    path: '/project',
+    subMenu: {
+      title: '프로젝트',
+      menu: [
+        { menuId: 'PJT_01', name: '주요프로젝트', componentName: 'info' },
+        { menuId: 'PJT_02', name: '주요협력사', componentName: 'partner' },
+      ],
+    },
+  },
+]);
+const currentMenu = ref({});
+const currentSubMenu = ref({});
+
+
+export { menu, currentMenu, currentSubMenu };
