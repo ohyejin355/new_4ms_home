@@ -70,8 +70,8 @@ export default {
         subMenu: {
           title: '프로젝트',
           menu: [
-            { menuId: 'PJT_01', name: '주요프로젝트' },
-            { menuId: 'PJT_02', name: '주요협력사' },
+            { menuId: 'PJT_01', name: '주요프로젝트', componentName: 'info' },
+            { menuId: 'PJT_02', name: '주요협력사', componentName: 'partner' },
           ],
         },
       },

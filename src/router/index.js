@@ -8,6 +8,8 @@ import BusinessMaintenance from '../views/business/BusinessMaintenance.vue'
 import Ablebot1 from '@/views/solution/Ablebot1.vue'
 import SolutionMain from '@/views/solution/SolutionMain.vue'
 import SallyPlan from '@/views/solution/SallyPlan.vue'
+import ProjectInfo from '../views/project/ProjectInfo.vue'
+import ProjectPartner from '../views/project/ProjectPartner.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,7 +49,11 @@ const router = createRouter({
     {
       path: '/project',
       name: 'project',
-      components: {},
+      components: {
+        default: ProjectInfo,
+        info: ProjectInfo,
+        partner: ProjectPartner,
+      },
     },
   ],
 })
