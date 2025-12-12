@@ -106,6 +106,10 @@ export default {
             ? currentMenu.value.subMenu.menu[0]
             : { menuId: '', name: 'home', componentName: 'default' }
         }
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
       },
     )
   },

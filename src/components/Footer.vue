@@ -47,18 +47,18 @@ onUnmounted(() => {
         <div class="col-links">
           <h4 class="footer-title">Company</h4>
           <ul class="footer-list">
-            <li><router-link to="/company/info" class="link">회사소개</router-link></li>
-            <li><router-link to="/company/ceo" class="link">CEO 인사말</router-link></li>
-            <li><router-link to="/company/map" class="link">오시는 길</router-link></li>
+            <li><router-link :to="{path: '/company', query: {menuId: 'COM_01'}}" class="link">회사소개</router-link></li>
+            <li><router-link :to="{path: '/company', query: {menuId: 'COM_02'}}" class="link">CEO 인사말</router-link></li>
+            <li><router-link :to="{path: '/company', query: {menuId: 'COM_03'}}" class="link">오시는 길</router-link></li>
           </ul>
         </div>
 
         <div class="col-links">
           <h4 class="footer-title">Business</h4>
           <ul class="footer-list">
-            <li><router-link to="/business" class="link">SI/SM 사업</router-link></li>
-            <li><router-link to="/solution/ai" class="link">AI 솔루션</router-link></li>
-            <li><router-link to="/solution/farm" class="link">스마트팜</router-link></li>
+            <li><router-link :to="{path: '/business', query: {menuId: 'BUS_01'}}" class="link">SI/SM 사업</router-link></li>
+            <li><router-link :to="{path: '/solution', query: {menuId: 'SOL_01'}}" class="link">AI 솔루션</router-link></li>
+            <li><router-link :to="{path: '/solution', query: {menuId: 'SOL_02'}}" class="link">스마트팜</router-link></li>
           </ul>
         </div>
 
