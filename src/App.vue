@@ -2,15 +2,7 @@
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
 import Tab from './components/Tab.vue'
-import { menu, currentSubMenu, getMenu, createMenuRoute } from './router/menu';
-import { useRouter } from 'vue-router'
-
-// fetch menu
-menu.value = getMenu();
-
-// add menu to router
-const router = useRouter();
-createMenuRoute().forEach(r => router.addRoute(r));
+import { currentSubMenu } from './router/menu';
 </script>
 
 <template>
