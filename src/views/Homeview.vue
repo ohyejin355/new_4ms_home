@@ -426,7 +426,8 @@ h4 {
   overflow: hidden;
 
   /* Background Image Setting */
-  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+  /*background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');*/
+  background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1170&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
 }

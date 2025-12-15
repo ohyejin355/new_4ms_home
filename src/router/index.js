@@ -39,22 +39,24 @@ router.beforeEach((to, from, next) => {
   if (to.query.menuId) {
     queryMenuID = to.query.menuId;
     next(to.path);
-  } else if(queryMenuID) {
-    currentSubMenu.value = currentMenu.value.subMenu.menu.filter((o) => o.menuId === queryMenuID)[0];
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    queryMenuID = null;
-    next();
   } else if(to.path !== '/') {
     currentSubMenu.value = currentMenu.value.subMenu.menu[0];
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
     next();
   } else {
     currentSubMenu.value = {};
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
     next();
   }
 });
 
+router.afterEach(() => {
+  if(queryMenuID) {
+    currentSubMenu.value = currentMenu.value.subMenu.menu.filter((o) => o.menuId === queryMenuID)[0];
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    queryMenuID = null;
+  }
+});
 
 function createMenuRoute() {
   const routes = [];
