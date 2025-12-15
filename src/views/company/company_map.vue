@@ -1,16 +1,16 @@
 <template>
   <main>
-    <section class="py-16 md:py-24">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="bg-white p-6 md:p-12 rounded-lg shadow-lg">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900">오시는길</h2>
-            <p class="mt-4 text-lg text-slate-600">여기는 주식회사 포엠에스입니다.</p>
+    <section class="comp_section">
+      <div class="comp_wrapper">
+        <div class="comp_content">
+          <div class="comp_text">
+            <h2 class="comp_h2">오시는길</h2>
+            <p class="comp_description">여기는 주식회사 포엠에스입니다.</p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mb-16">
+          <div class="grid_style">
             <div class="bg-slate-100 p-8 rounded-lg">
-              <h3 class="text-xl font-bold text-slate-800 mb-4">개발문의</h3>
+              <h3 class="text_inq text-slate-800">개발문의</h3>
               <p class="text-slate-600 mb-4">
                 시스템 개발 문의는 다음 메일로 연락주시면<br />빠른 시일 내 답변 드리겠습니다.
               </p>
@@ -21,7 +21,7 @@
               >
             </div>
             <div class="bg-slate-100 p-8 rounded-lg">
-              <h3 class="text-xl font-bold text-slate-800 mb-4">운영문의</h3>
+              <h3 class="text_inq text-slate-800">운영문의</h3>
               <p class="text-slate-600 mb-4">
                 시스템 운영 문의는 다음 메일로 연락주시면<br />빠른 시일 내 답변 드리겠습니다.
               </p>
@@ -39,7 +39,7 @@
               class="daum-roughmap-container"
               id="map-container"
               ref="mapContainer"
-              :style="{ width: mapWidth + 'px', height: mapHeight + 'px' }"
+              :style="{ width: '1125px', height: '500px' }"
             ></div>
 
             <div class="text-center mt-16">
@@ -61,18 +61,6 @@
 
 <script setup>
 import { onMounted } from 'vue'
-
-// props 정의
-const props = defineProps({
-  mapWidth: {
-    type: [String, Number],
-    default: 1125,
-  },
-  mapHeight: {
-    type: [String, Number],
-    default: 500,
-  },
-})
 
 const initKakaoMap = () => {
   // window.kakao가 로드되었는지 확인
@@ -115,5 +103,26 @@ onMounted(() => {
   margin: 0 auto; /* 중앙 정렬 예시 */
   border: 1px solid #ccc;
   max-width: 100%;
+}
+
+.grid_style {
+  display: grid;
+  margin-bottom: 4rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .grid_style {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.text_inq {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 </style>

@@ -10,10 +10,7 @@
 
           <div class="grid">
             <div class="white-box">
-              <div
-                class="box-div"
-                style="background-color: var(--color-teal-100); color: var(--color-teal-600)"
-              >
+              <div class="box-div bg-teal-100 text-teal-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -33,10 +30,7 @@
               <p class="value">소프트웨어<br />개발 및 자문, 공급업</p>
             </div>
             <div class="white-box">
-              <div
-                class="box-div"
-                style="background-color: var(--color-cyan-100); color: var(--color-cyan-600)"
-              >
+              <div class="box-div bg-cyan-100 text-cyan-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -56,10 +50,7 @@
               <p class="value">서비스</p>
             </div>
             <div class="white-box">
-              <div
-                class="box-div"
-                style="background-color: var(--color-indigo-100); color: var(--color-indigo-600)"
-              >
+              <div class="box-div bg-indigo-100 text-indigo-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -79,10 +70,7 @@
               <p class="value">2016년 9월 8일</p>
             </div>
             <div class="white-box">
-              <div
-                class="box-div"
-                style="background-color: var(--color-pink-100); color: var(--color-pink-600)"
-              >
+              <div class="box-div bg-pink-100 text-pink-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

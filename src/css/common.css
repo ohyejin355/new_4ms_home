@@ -1,4 +1,5 @@
-@import "tailwindcss";
+/* tailwind 적용 */
+@import 'tailwindcss';
 
 .wrapper {
   max-width: 80rem;

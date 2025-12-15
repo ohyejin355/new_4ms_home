@@ -8,16 +8,16 @@
             <p class="comp_description">다양한 업무 경험자로 구성된 주식회사 포엠에스</p>
           </div>
 
-          <div class="relative_div">
+          <div class="relative">
             <div class="absolute_div"></div>
 
-            <div class="relative_div">
+            <div class="relative">
               <div class="item">
                 <div class="right_text">
                   <h3 class="year">2023 ~ 2024</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>경제통합 차세대 시스템 구축(채권/채무, 회계, 세무, 자금)</li>
                     <li>농협은행 2022년 NH농협은행 디지털도급 운영</li>
                     <li>농협상호금융 2023년 IT상호금융부 도급인력 운영</li>
@@ -29,8 +29,8 @@
                 <div class="right_text">
                   <h3 class="year">2022</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>농협은행 2022년 NH농협은행 디지털도급 운영</li>
                     <li>신한DS 협력사 등록</li>
                     <li>인사회계_ERP(전사적자원관리) 시스템 저작권 등록</li>
@@ -42,8 +42,8 @@
                 <div class="right_text">
                   <h3 class="year">2021</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>SK C&C 협력사 등록</li>
                     <li>농협은행 2021년 NH농협은행 디지털도급 운영</li>
                     <li>농협 경제 스마트워크 시스템 고도화 구축</li>
@@ -56,8 +56,8 @@
                 <div class="right_text">
                   <h3 class="year">2020</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>AI ABLEbot 챗봇 솔루션 저작권 등록</li>
                     <li>LG CNS 협력사 등록</li>
                     <li>농협은행 (공통)2020년 디지털금융 도급인력 운용</li>
@@ -70,8 +70,8 @@
                 <div class="right_text">
                   <h3 class="year">2018 ~ 2019</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>NICE 디엔비 우수기술기업 인증서 흭득</li>
                     <li>한국아이비엠㈜ 협력사 등록</li>
                     <li>㈜신세계아이엔씨 협력사 등록</li>
@@ -85,8 +85,8 @@
                 <div class="right_text">
                   <h3 class="year">2016 ~ 2017</h3>
                 </div>
-                <div class="w-1/2 pl-8">
-                  <ul class="list-disc list-inside text-slate-600 space-y-2">
+                <div class="left_side">
+                  <ul class="right_side text-slate-600">
                     <li>기업부설연구소 인증서 흭득</li>
                     <li>'이동비콘의 위치 추정 시스템 및 그 방법' 특허 등록</li>
                     <li>㈜엔디에스 협력사 등록</li>
@@ -103,10 +103,6 @@
   </main>
 </template>
 <style scoped>
-.relative_div {
-  position: relative;
-}
-
 .absolute_div {
   position: absolute;
   left: 50%;
@@ -132,5 +128,16 @@
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+}
+
+.left_side {
+  padding-left: 2rem;
+  width: 50%;
+}
+
+.right_side {
+  margin-top: 0.5rem;
+  list-style-type: disc;
+  list-style-position: inside;
 }
 </style>
