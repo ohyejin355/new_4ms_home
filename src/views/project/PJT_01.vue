@@ -147,7 +147,7 @@
 
   .project-name {
     line-height: 1.125rem;
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(51 65 85 / 1);
   }
 
