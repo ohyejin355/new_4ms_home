@@ -8,7 +8,7 @@ import { currentSubMenu } from './router/menu';
 <template>
   <div id="app" class="app-wrapper">
     <Header />
-    <Tab v-if="$route.fullPath !== '/'"/>
+    <Tab v-if="typeof currentSubMenu.name != 'undefined' /*$route.path != '/'*/"/>
     <div class="content">
       <router-view :name="currentSubMenu.componentName" v-slot="{ Component }">
         <keep-alive>
