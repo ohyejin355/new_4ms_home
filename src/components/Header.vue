@@ -3,24 +3,35 @@
     <div class="container">
       <div class="layout-pc">
         <router-link to="/"
-          ><span class="logo dragging-disable">4MS<span class="logo-dot">.</span></span></router-link
+          ><span class="logo dragging-disable"
+            >4MS<span class="logo-dot">.</span></span
+          ></router-link
         >
         <nav class="global-navigation dragging-disable">
           <router-link
             class="global-navigation-button"
             v-for="item in menu"
             :key="item.name"
-            :to="item.path /* replace here to link subMenu :: ex) {path: '/business', query: {menuId: 'BUS_02'}}*/"
+            :to="
+              item.path /* replace here to link subMenu :: ex) {path: '/business', query: {menuId: 'BUS_02'}}*/
+            "
             >{{ item.name }}</router-link
           >
         </nav>
-        <router-link class="global-navigation-contact dragging-disable" to="/company">CONTACT</router-link>
+        <router-link class="global-navigation-contact dragging-disable" to="/company"
+          >CONTACT</router-link
+        >
       </div>
       <div class="layout-mobile">
         <router-link to="/"
           ><span class="logo">4MS<span class="logo-dot">.</span></span></router-link
         >
-        <button class="mobile-menu-button" aria-label="메뉴" :onclick="toggleMobileMenu">
+        <button
+          ref="menuBtnRef"
+          class="mobile-menu-button"
+          aria-label="메뉴"
+          @click="toggleMobileMenu"
+        >
           <svg class="mobile-menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
@@ -33,9 +44,9 @@
       </div>
     </div>
     <div
-      id="mobile-menu-toggle"
+      ref="mobileMenuRef"
       class="layout-mobile mobile-menu-container"
-      style="max-height: 0px; opacity: 0"
+      :style="{ maxHeight: isMenuOpen ? '400px' : '0px', opacity: isMenuOpen ? '1' : '0' }"
     >
       <nav class="global-navigation">
         <router-link
@@ -43,6 +54,7 @@
           v-for="item in menu"
           :key="item.name"
           :to="item.path"
+          @click="closeMobileMenu"
           >{{ item.name }}</router-link
         >
       </nav>
@@ -51,18 +63,54 @@
 </template>
 
 <script setup>
-  import { menu } from '@/router/menu.js';
+import { menu } from '@/router/menu.js'
 
-  const toggleMobileMenu = () => {1
-    const mobileMenu = document.getElementById('mobile-menu-toggle')
-    if (mobileMenu.style.maxHeight === '0px') {
-      mobileMenu.style.maxHeight = '400px'
-      mobileMenu.style.opacity = '1'
-    } else {
-      mobileMenu.style.maxHeight = '0px'
-      mobileMenu.style.opacity = '0'
-    }
+// 모바일 메뉴 상태 관리
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 모바일 메뉴 상태 변수
+const isMenuOpen = ref(false)
+
+// 모바일 메뉴 참조
+const mobileMenuRef = ref(null)
+
+// 메뉴 버튼 참조
+const menuBtnRef = ref(null)
+
+// 모바일 메뉴 토글 함수
+const toggleMobileMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+// 모바일 메뉴 닫기 함수
+const closeMobileMenu = () => {
+  isMenuOpen.value = false
+}
+
+// 외부 클릭 감지
+const handleClickOutside = (event) => {
+  if (!isMenuOpen.value) return
+  const target = event.target
+
+  // 메뉴가 열려있고, 클릭한 대상이 모바일 메뉴나 메뉴 버튼이 아닐 때 메뉴 닫기
+  if (
+    mobileMenuRef.value &&
+    !mobileMenuRef.value.contains(target) &&
+    menuBtnRef.value &&
+    !menuBtnRef.value.contains(target)
+  ) {
+    closeMobileMenu()
   }
+}
+
+// 렌더링후 외부 클릭 이벤트 등록 및 해제
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <style scoped>
