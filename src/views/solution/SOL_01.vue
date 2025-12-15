@@ -110,4 +110,10 @@ const currentTab = ref('Ablebot1')
   font-size: 1.125rem;
   color: #334155;
 }
+
+.solution-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
