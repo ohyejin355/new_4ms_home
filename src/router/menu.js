@@ -16,12 +16,14 @@
 
 import { ref } from 'vue';
 
-const menu = ref([getMenuList()]);
+const subMenuView = import.meta.glob('../views/**/*.vue');
+
+const menu = ref([]);
 const currentMenu = ref({});
 const currentSubMenu = ref({});
 
-const getMenuList = () => {
-  menu.value = [
+function getMenu() {
+  return [
     {
       name: 'About',
       path: '/company',
@@ -72,6 +74,30 @@ const getMenuList = () => {
       },
     },
   ]
-}
+};
 
-export { menu, currentMenu, currentSubMenu };
+const createMenuRoute = () => {
+  const routes = [];
+
+  menu.value.forEach((m) => {
+    const baseUrl = '../views' + m.path;
+    const newRoute = {
+      path: m.path,
+      name: m.name,
+      components: {}
+    };
+
+    newRoute.components.default = subMenuView[(baseUrl + `/${m.subMenu.menu[0].menuId}.vue`).toString()];
+    m.subMenu.menu.forEach((sm) => {
+      if (sm.componentName) {
+        newRoute.components[sm.componentName] = subMenuView[(baseUrl + `/${sm.menuId}.vue`).toString()];
+      }
+    });
+
+    routes.push(newRoute);
+  });
+
+  return routes;
+};
+
+export { menu, currentMenu, currentSubMenu, getMenu, createMenuRoute };
