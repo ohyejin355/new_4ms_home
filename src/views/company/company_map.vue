@@ -41,9 +41,6 @@
               ref="kakao_map"
               :style="{ width: '100%', height: '80vh' }"
             ></div>
-            <!-- <KakaoMap :lat="coordinate.lat" :lng="coordinate.lng" :draggable="true">
-              <KakaoMapMarker :lat="coordinate.lat" :lng="coordinate.lng"></KakaoMapMarker>
-            </KakaoMap> -->
 
             <div class="text-center mt-16">
               <p class="text-xl font-semibold text-slate-800">
