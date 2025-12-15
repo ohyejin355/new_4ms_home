@@ -1,15 +1,15 @@
 <template>
-  <div class="project-page">
+  <div class="">
     <section class="section">
       <div class="wrapper">
-        <div class="page-header text-center">
-          <h2 class="page-title">주요협력사</h2>
-          <p class="page-desc">다양한 기업들과 협력하여 시스템 개발에 힘쓰고 있습니다.</p>
+        <div class="text-center mb-16">
+          <h2 class="text-[1.875rem]/[36px] font-black text-slate-900 mb-4 md:text-[2.25rem]/[36px] font-mont">주요협력사</h2>
+          <p class="text-[1.125rem]/[18px] text-slate-600">다양한 기업들과 협력하여 시스템 개발에 힘쓰고 있습니다.</p>
         </div>
 
-        <div class="parter-grid">
-          <div class="partner-item" v-for="(partner, index) in partnerLogo" :key="index">
-            <img :src="partner.logoUrl" :alt="partner.name" />
+        <div class="parter-grid grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8 max-w-[1050px] mx-auto">
+          <div class="partner-item flex shadow-md p-8 bg-white rounded-lg justify-center items-center h-32 border border-gray-200" v-for="(partner, index) in partnerLogo" :key="index">
+            <img :src="partner.logoUrl" :alt="partner.name" class="max-h-16" />
           </div>
         </div>
       </div>
@@ -35,53 +35,3 @@
     { logoUrl: '/image/sub/pro_logo_12.png', name: 'Partner 12' },
   ])
 </script>
-
-<style scoped>
-  .page-header {
-    margin-bottom: 4rem;
-  }
-
-  .page-title {
-    font-size: 1.875rem;
-    font-weight: 900;
-    color: #0f172a;
-    margin-bottom: 1rem;
-  }
-
-  .page-desc {
-    font-size: 1.125rem;
-    color: #475569;
-  }
-
-  .parter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1050px;
-    margin: 0 auto;
-  }
-
-  .partner-item {
-    display: flex;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    padding: 2rem;
-    background-color: rgb(255 255 255 / 1);
-    border-radius: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    height: 8rem;
-    box-sizing: border-box;
-    border-style: solid;
-    border-color: #e5e7eb;
-  }
-
-  .partner-item img {
-    max-height: 4rem;
-  }
-
-  @media (min-width: 768px) {
-    .page-title {
-      font-size: 2.25rem;
-    }
-  }
-</style>

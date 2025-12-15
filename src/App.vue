@@ -21,9 +21,6 @@ import { currentSubMenu } from './router/menu'
 </template>
 
 <style>
-@import './css/reset.css';
-@import './css/common.css';
-
 .app-wrapper {
   display: flex;
   flex-direction: column;

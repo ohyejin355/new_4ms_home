@@ -1,5 +1,9 @@
-/* tailwind 적용 */
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+html, body {
+  font-family: "Nanum Gothic", sans-serif;
+  background-color: rgb(249 250 251 / 1);
+}
 
 .wrapper {
   max-width: 80rem;
