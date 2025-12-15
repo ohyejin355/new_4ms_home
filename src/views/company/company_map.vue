@@ -64,6 +64,8 @@
 <script>
 import { onMounted, ref } from 'vue'
 const { VITE_APP_KAKAO_MAP_KEY } = import.meta.env
+// 테스트 필요 시 .env 파일에 아래 코드 작성
+// VITE_APP_KAKAO_MAP_KEY=e562892033d8ef4d8cbecba33d500efb
 
 export default {
   name: 'App',
