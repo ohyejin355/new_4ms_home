@@ -168,7 +168,6 @@ const farmFeatures = [
 
 .section {
   padding: 4rem 0;
-  background-color: white;
 }
 
 @media (min-width: 768px) {
