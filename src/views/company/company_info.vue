@@ -8,9 +8,9 @@
             <p class="comp_description">미래를 창조하는 주식회사 포엠에스</p>
           </div>
 
-          <div class="grid">
-            <div class="white-box">
-              <div class="box-div bg-teal-100 text-teal-600">
+          <div class="grid_box">
+            <div class="white_box">
+              <div class="box_div bg-teal-100 text-teal-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -26,11 +26,11 @@
                   />
                 </svg>
               </div>
-              <p class="category">업종</p>
-              <p class="value">소프트웨어<br />개발 및 자문, 공급업</p>
+              <p class="category text-slate-500">업종</p>
+              <p class="value text-slate-800">소프트웨어<br />개발 및 자문, 공급업</p>
             </div>
-            <div class="white-box">
-              <div class="box-div bg-cyan-100 text-cyan-600">
+            <div class="white_box">
+              <div class="box_div bg-cyan-100 text-cyan-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -46,11 +46,11 @@
                   />
                 </svg>
               </div>
-              <p class="category">업태</p>
-              <p class="value">서비스</p>
+              <p class="category text-slate-500">업태</p>
+              <p class="value text-slate-800">서비스</p>
             </div>
-            <div class="white-box">
-              <div class="box-div bg-indigo-100 text-indigo-600">
+            <div class="white_box">
+              <div class="box_div bg-indigo-100 text-indigo-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -66,11 +66,11 @@
                   />
                 </svg>
               </div>
-              <p class="category">설립일</p>
-              <p class="value">2016년 9월 8일</p>
+              <p class="category text-slate-500">설립일</p>
+              <p class="value text-slate-800">2016년 9월 8일</p>
             </div>
-            <div class="white-box">
-              <div class="box-div bg-pink-100 text-pink-600">
+            <div class="white_box">
+              <div class="box_div bg-pink-100 text-pink-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -86,16 +86,16 @@
                   />
                 </svg>
               </div>
-              <p class="category">임직원수</p>
-              <p class="value">45명</p>
+              <p class="category text-slate-500">임직원수</p>
+              <p class="value text-slate-800">45명</p>
             </div>
           </div>
 
-          <div class="border">
-            <div class="comp_grid">
+          <div class="border-t border-slate-200 pt-16 mb-16">
+            <div class="grid_box2">
               <div>
-                <h3>OVERVIEW</h3>
-                <p class="text-Area">
+                <h3 class="text-slate-900">OVERVIEW</h3>
+                <p class="text-slate-600 text_area">
                   주식회사 포엠에스는 2016년에 설립되어 다양한 업무분야의 전문가들로 구성된
                   기업입니다. <br /><br />
                   '사람중심'을 창업철학으로 주식회사 포엠에스는 급변하는 IT기술 및 인프라 환경에
@@ -109,11 +109,16 @@
             </div>
           </div>
 
-          <div class="border">
-            <div class="comp_grid">
+          <div class="border-t border-slate-200 pt-16">
+            <div class="grid_box2">
+              <img
+                src="/image/sub/company_01_02.jpg"
+                alt="VISION 이미지"
+                class="img md:order-last"
+              />
               <div>
-                <h3>VISION</h3>
-                <p class="text-Area">
+                <h3 class="text-slate-900">VISION</h3>
+                <p class="text-slate-600 text_area">
                   인재와 기술을 바탕으로 최적의 IT서비스를 실천하여 공동의 발전과 번영을
                   추구합니다.<br /><br />
                   다 년간 개발 업무를 통해 축적된 노하우를 바탕으로 IT 전문기업으로써의 발판을
@@ -123,7 +128,6 @@
                   기술력 향상에 앞서 대응하며 일류의 기업으로 거듭날 것입니다.
                 </p>
               </div>
-              <img src="/image/sub/company_01_02.jpg" alt="VISION 이미지" class="img" />
             </div>
           </div>
         </div>
@@ -132,7 +136,7 @@
   </main>
 </template>
 <style scoped>
-.grid {
+.grid_box {
   display: grid;
   margin-bottom: 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -141,17 +145,17 @@
 }
 
 @media (min-width: 768px) {
-  .grid {
+  .grid_box {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (min-width: 1024px) {
-  .gird {
+  .grid_box {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-.white-box {
+.white_box {
   padding: 2rem;
   border-radius: 0.75rem;
   background-color: #ffffff;
@@ -164,13 +168,13 @@
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.white-box:hover {
+.white_box:hover {
   box-shadow:
     0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.box-div {
+.box_div {
   display: flex;
   margin-bottom: 1rem;
   justify-content: center;
@@ -202,7 +206,21 @@
 
 .border {
   padding-top: 4rem;
+  margin-bottom: 4rem;
   border-top-width: 1px;
+}
+
+.grid_box2 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .grid_box2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .img {
@@ -225,7 +243,7 @@ h3 {
   font-weight: 700;
 }
 
-.text-Area {
+.text_area {
   line-height: 1.625;
   white-space: pre-line;
 }

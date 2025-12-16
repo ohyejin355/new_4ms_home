@@ -38,8 +38,8 @@
             <div
               class="daum-roughmap-container"
               id="map-container"
-              ref="mapContainer"
-              :style="{ width: '1125px', height: '500px' }"
+              ref="kakao_map"
+              :style="{ width: '100%', height: '80vh' }"
             ></div>
 
             <div class="text-center mt-16">
@@ -58,42 +58,62 @@
     </section>
   </main>
 </template>
+<script>
+import { onMounted, ref } from 'vue'
+const { VITE_APP_KAKAO_MAP_KEY } = import.meta.env
+// 테스트 필요 시 .env 파일에 아래 코드 작성
+// VITE_APP_KAKAO_MAP_KEY=e562892033d8ef4d8cbecba33d500efb
 
-<script setup>
-import { onMounted } from 'vue'
+export default {
+  name: 'App',
+  setup() {
+    let map_data = ref({
+      appKey: VITE_APP_KAKAO_MAP_KEY, // API 키 값
+      map: null,
+      lat: 37.5147464245043, // 위도
+      lng: 126.897536835727, // 경도
+      level: 3, // 맵 레벨
+    })
+    let kakao_map = ref(null)
 
-const initKakaoMap = () => {
-  // window.kakao가 로드되었는지 확인
-  if (window.kakao && window.kakao.maps) {
-    const container = document.getElementById('map-container') // DOM 요소 선택
-
-    // 지도의 중심 좌표
-    const mapOption = {
-      center: new window.kakao.maps.LatLng(37.5147464245043, 126.897536835727),
-      level: 3, // 지도 확대 레벨
+    // 카카오 API 설정 함수 + 카카오 맵 생성
+    const set_kakao_api = () => {
+      // 카카오 맵 API 불러오기
+      if (window.kakao && window.kakao.maps) {
+        set_kakao_map()
+      } else {
+        const script = document.createElement('script')
+        script.onload = () => window.kakao.maps.load(set_kakao_map)
+        script.src = `//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${map_data.value.appKey}`
+        document.head.appendChild(script)
+      }
     }
 
-    // 지도 객체 생성
-    const map = new window.kakao.maps.Map(container, mapOption)
+    // 카카오 맵 생성 함수
+    const set_kakao_map = () => {
+      console.log('카카오 맵 생성')
+      const options = {
+        //지도를 생성할 때 필요한 기본 옵션
+        center: new window.kakao.maps.LatLng(37.5147464245043, 126.897536835727), //지도의 중심 좌표.
+        level: 3,
+      }
+      map_data.value.map = new window.kakao.maps.Map(kakao_map.value, options) // 지도 생성 및 객체 리턴
+    }
 
-    // 마커 추가 (선택 사항)
-    new window.kakao.maps.Marker({
-      map: map,
-      position: mapOption.center,
+    onMounted(() => {
+      // 컴포넌트가 마운트된 후 맵 초기화 함수 실행
+      // Kakao API 스크립트는 index.html에서 로드되므로, 별도의 동적 로딩이 필요 없습니다.
+      set_kakao_api()
     })
 
-    console.log('Kakao Map 렌더링 완료')
-  } else {
-    // API 스크립트가 아직 로드되지 않은 경우
-    console.error('Kakao Map API가 정의되지 않았습니다. index.html을 확인하세요.')
-  }
+    return {
+      kakao_map, // DOM ref 때문에 꼭 있어야함
+      map_data,
+      set_kakao_api,
+      set_kakao_map,
+    }
+  },
 }
-
-onMounted(() => {
-  // 컴포넌트가 마운트된 후 맵 초기화 함수 실행
-  // Kakao API 스크립트는 index.html에서 로드되므로, 별도의 동적 로딩이 필요 없습니다.
-  initKakaoMap()
-})
 </script>
 
 <style scoped>
