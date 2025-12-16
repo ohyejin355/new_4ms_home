@@ -1,5 +1,5 @@
 <script setup>
-import Footer from './components/Footer.vue'
+import FooterComponent from './components/FooterComponent.vue'
 import headerComponent from './components/HeaderComponent.vue'
 import navigationComponent from './components/NavigationComponent.vue'
 import { currentSubMenu } from './router/menu'
@@ -20,7 +20,7 @@ import { currentSubMenu } from './router/menu'
         </keep-alive>
       </router-view>
     </div>
-    <Footer />
+    <FooterComponent />
   </div>
 </template>
 
