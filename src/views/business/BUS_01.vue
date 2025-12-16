@@ -177,6 +177,11 @@ const maintenanceItems = ref([
   color: #0f172a;
   margin-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+}
 .page-desc {
   font-size: 1.125rem;
   color: #475569;
@@ -291,7 +296,7 @@ const maintenanceItems = ref([
 .card-desc {
   color: #475569;
   line-height: 1.6;
-  white-space: pre-line; 
+  white-space: pre-line;
   font-size: 1rem;
 }
 

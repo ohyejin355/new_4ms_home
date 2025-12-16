@@ -161,13 +161,17 @@ const farmFeatures = [
   margin-bottom: 4rem;
 }
 
-.page-title { 
+.page-title {
   font-size: 1.875rem;
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 1rem;
 }
-
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+}
 
 .page-desc {
   font-size: 1.125rem;
