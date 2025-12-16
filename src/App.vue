@@ -1,18 +1,22 @@
 <script setup>
 import Footer from './components/Footer.vue'
-import Header from './components/Header.vue'
-import Tab from './components/Tab.vue'
+import headerComponent from './components/HeaderComponent.vue'
+import navigationComponent from './components/NavigationComponent.vue'
 import { currentSubMenu } from './router/menu'
 </script>
 
 <template>
   <div id="app" class="app-wrapper">
-    <Header />
-    <Tab v-if="typeof currentSubMenu.name != 'undefined' /*$route.path != '/'*/" />
+    <header-component />
+    <transition name="fade">
+      <navigation-component v-if="typeof currentSubMenu.name != 'undefined'" />
+    </transition>
     <div class="content">
-      <router-view :name="currentSubMenu.componentName" v-slot="{ Component }">
+      <router-view :name="currentSubMenu.componentName" v-slot="{ Component, route }">
         <keep-alive>
-          <component :is="Component" />
+          <transition name="fade">
+            <component :is="Component" :key="route.path" />
+          </transition>
         </keep-alive>
       </router-view>
     </div>
@@ -29,5 +33,15 @@ import { currentSubMenu } from './router/menu'
 
 .content {
   flex: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
