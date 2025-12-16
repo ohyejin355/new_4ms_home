@@ -6,7 +6,7 @@ const consultingItems = ref([
   {
     title: '유통/물류 부문',
     desc: '고객의 비즈니스 환경에 최적화된 유통/물류 시스템 구축을\n위한 전문 컨설팅을 제공합니다.',
-    imgSrc: '/image/sub/sol_01_01_img.png', // 이미지 경로는 public 폴더 기준입니다.
+    imgSrc: '/image/sub/sol_01_01_img.png',
   },
   {
     title: '자동차(트럭) 부문',
@@ -94,7 +94,7 @@ const maintenanceItems = ref([
       <div class="wrapper">
         <div class="page-header text-center">
           <h2 class="page-title">사업영역</h2>
-          <p class="page-desc">경험을 바탕으로 한 맞춤형 시스템 제공</p>
+          <p class="page-desc">현장 경험을 바탕으로 고객 비즈니스에 최적화된 IT 솔루션 제공</p>
         </div>
 
         <div class="intro-box">
@@ -163,119 +163,10 @@ const maintenanceItems = ref([
 
 <style scoped>
 /* =========================================
-   1. Common & Layout
+   Page Specific Content
+   (공통에 없는 이 페이지 전용 스타일)
    ========================================= */
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
 
-.text-center {
-  text-align: center;
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: 6rem 0;
-  }
-}
-
-/* =========================================
-   2. Sub Visual (Header Image)
-   ========================================= */
-.sub-visual {
-  position: relative;
-  /* 헤더 높이만큼 패딩 필요 (헤더가 fixed일 경우) */
-  /* padding-top: 4rem; */
-}
-
-.visual-bg {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .visual-bg {
-    height: 400px;
-  }
-}
-
-.overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 70px;
-  position: absolute;
-  inset: 0;
-  background-color: rgba(15, 23, 42, 0.6); /* slate-900 opacity-60 */
-}
-
-.visual-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  text-align: center;
-}
-
-.visual-title {
-  color: white;
-  font-size: 1.875rem;
-  font-weight: 900;
-}
-
-@media (min-width: 768px) {
-  .visual-title {
-    font-size: 2.25rem;
-  }
-}
-
-/* Sub Menu Bar */
-.sub-menu-bar {
-  background-color: white;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.sub-menu-list {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sub-menu-link {
-  white-space: nowrap;
-  display: block;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  color: #64748b;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-
-.sub-menu-link:hover,
-.sub-menu-link.active {
-  color: #0d9488; /* teal */
-  border-bottom-color: #0d9488;
-}
-
-/* =========================================
-   3. Page Content
-   ========================================= */
 .page-header {
   margin-bottom: 4rem;
 }
@@ -286,13 +177,6 @@ const maintenanceItems = ref([
   color: #0f172a;
   margin-bottom: 1rem;
 }
-
-@media (min-width: 768px) {
-  .page-title {
-    font-size: 2.25rem;
-  }
-}
-
 .page-desc {
   font-size: 1.125rem;
   color: #475569;
@@ -319,7 +203,9 @@ const maintenanceItems = ref([
   }
 }
 
-/* Business Lists */
+/* =========================================
+   Business Lists & Grid (이 페이지 전용)
+   ========================================= */
 .business-list {
   display: flex;
   flex-direction: column;
@@ -405,11 +291,11 @@ const maintenanceItems = ref([
 .card-desc {
   color: #475569;
   line-height: 1.6;
-  white-space: pre-line; /* 줄바꿈(\n) 적용 */
+  white-space: pre-line; 
   font-size: 1rem;
 }
 
 .grid-5 .card-desc {
   font-size: 0.875rem;
-} /* 5열 그리드는 글씨 조금 작게 */
+}
 </style>

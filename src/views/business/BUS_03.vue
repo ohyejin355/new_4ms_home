@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 
-// 1. 개발 프로세스 단계 데이터
 const processSteps = ref([
   { title: '사용자 요구사항', eng: 'Requirement' },
   { title: '계획 및 분석', eng: 'Planning & Analysis' },
@@ -11,7 +10,6 @@ const processSteps = ref([
   { title: '유지보수', eng: 'Maintenance' },
 ])
 
-// 2. 주요 서비스 목록 데이터
 const serviceList = ref([
   '컨설팅 및 시스템 분석',
   '소프트웨어 및 하드웨어 장비 판매 및 설치',
@@ -42,22 +40,32 @@ const serviceList = ref([
           <h3 class="section-subtitle text-center">DEVELOPMENT</h3>
 
           <div class="process-layout">
+            
+            <div class="center-line"></div>
+
             <div class="step-list">
               <div v-for="(step, index) in processSteps" :key="index" class="step-card">
                 <h4 class="step-title">{{ step.title }}</h4>
                 <p class="step-eng">{{ step.eng }}</p>
+                
+                <div class="connector connector-left">
+                  <div class="line"></div>
+                  <div class="dot"></div>
+                </div>
               </div>
-            </div>
-
-            <div class="process-image pc-only">
-              <img src="/image/sub/business_03_01.gif" alt="Development Process Flow" />
             </div>
 
             <div class="service-list">
               <div v-for="(service, index) in serviceList" :key="index" class="service-card">
                 <p class="service-text">{{ service }}</p>
+                
+                <div class="connector connector-right">
+                  <div class="line"></div>
+                  <div class="dot"></div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -69,142 +77,23 @@ const serviceList = ref([
 /* =========================================
    1. Common & Layout
    ========================================= */
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: 6rem 0;
-  }
-}
-
-.pc-only {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .pc-only {
-    display: block;
-  }
-}
+.wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+.text-center { text-align: center; }
+.section { padding: 4rem 0; }
+@media (min-width: 768px) { .section { padding: 6rem 0; } }
 
 /* =========================================
-   2. Sub Visual
+   2. Page Content
    ========================================= */
-.sub-visual {
-  position: relative;
-}
-
-.visual-bg {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .visual-bg {
-    height: 400px;
-  }
-}
-
-.overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 70px;
-  position: absolute;
-  inset: 0;
-  background-color: rgba(15, 23, 42, 0.6); /* slate-900 opacity-60 */
-}
-
-.visual-content {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  text-align: center;
-}
-
-.visual-title {
-  color: white;
-  font-size: 1.875rem;
-  font-weight: 900;
-}
-
-@media (min-width: 768px) {
-  .visual-title {
-    font-size: 2.25rem;
-  }
-}
-
-/* Sub Menu Bar */
-.sub-menu-bar {
-  background-color: white;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.sub-menu-list {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sub-menu-link {
-  white-space: nowrap;
-  display: block;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  color: #64748b;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-
-.sub-menu-link:hover,
-.sub-menu-link.active {
-  color: #0d9488;
-  border-bottom-color: #0d9488;
-}
-
-/* =========================================
-   3. Page Content
-   ========================================= */
-.page-header {
-  margin-bottom: 4rem;
-}
-
-.page-title {
+.page-header { margin-bottom: 4rem; }
+.page-title { 
   font-size: 1.875rem;
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 1rem;
 }
-
-@media (min-width: 768px) {
-  .page-title {
-    font-size: 2.25rem;
-  }
-}
-
-.page-desc {
-  font-size: 1.125rem;
-  color: #475569;
-}
+@media (min-width: 768px) { .page-title { font-size: 2.25rem; } }
+.page-desc { font-size: 1.125rem; color: #475569; }
 
 .intro-box {
   background-color: #f1f5f9;
@@ -213,109 +102,148 @@ const serviceList = ref([
   border-left: 4px solid #0d9488;
   margin-bottom: 4rem;
 }
+.intro-text { font-size: 1.25rem; font-weight: 600; color: #334155; line-height: 1.6; }
+@media (min-width: 768px) { .intro-text { font-size: 1.5rem; } }
 
-.intro-text {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #334155;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .intro-text {
-    font-size: 1.5rem;
-  }
-}
-
-/* Process Section */
+/* =========================================
+   3. Process Section (반응형 적용)
+   ========================================= */
 .process-section {
   border-top: 1px solid #e2e8f0;
   padding-top: 4rem;
 }
 
 .section-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 3rem;
+  font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 3rem;
 }
 
+/* --- [Mobile Layout] 기본값 (1024px 미만) --- */
 .process-layout {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
+  gap: 1.5rem;
+  padding-left: 2.5rem; /* 왼쪽에 선이 들어갈 공간 확보 */
 }
 
-@media (min-width: 1024px) {
-  .process-layout {
-    flex-direction: row;
-    align-items: flex-start; /* 상단 정렬 */
-    gap: 4rem;
-  }
+/* 수직선: 모바일에서는 왼쪽에 위치 */
+.center-line {
+  position: absolute;
+  left: 0; 
+  top: 1rem;
+  bottom: 1rem;
+  width: 1px;
+  background-color: #cbd5e1;
+  z-index: 0;
 }
 
-/* Step Cards (Left Column) */
-.step-list {
+/* 컬럼 공통 스타일 */
+.step-list, .service-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
+  gap: 1.5rem;
+}
+
+/* 카드 공통 스타일 */
+.step-card, .service-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative; /* 커넥터 기준점 */
+  z-index: 1;
 }
 
 .step-card {
   background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  text-align: center;
   border: 1px solid #f1f5f9;
 }
-
-.step-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 0.25rem;
-}
-
-.step-eng {
-  font-size: 0.875rem;
-  color: #64748b;
-}
-
-/* Service Cards (Right Column) */
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
-}
-
 .service-card {
-  background-color: #e2e8f0; /* slate-200 */
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: #e2e8f0;
+  min-height: auto; /* 모바일에서는 자동 높이 */
 }
 
-.service-text {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1e293b;
+/* 텍스트 스타일 */
+.step-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; }
+.step-eng { font-size: 0.875rem; color: #64748b; }
+.service-text { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin: 0; }
+
+/* --- [Connectors] 선과 점 (모바일 기본값: 왼쪽 연결) --- */
+.connector {
+  position: absolute;
+  top: 50%;
+  left: -2.5rem; /* 컨테이너 padding-left 값만큼 뻗음 */
+  width: 2.5rem;
+  height: 1px;
+  z-index: -1;
 }
 
-/* Process Image (Center) */
-.process-image {
-  flex-shrink: 0;
+.connector .line { width: 100%; height: 1px; background-color: #cbd5e1; }
+.connector .dot {
+  position: absolute;
+  left: -6px; /* 선 시작점 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px; height: 12px;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #ffffff;
 }
 
-.process-image img {
-  max-width: 100%;
-  height: auto;
+/* =========================================
+   4. [Desktop Layout] PC 화면 (1024px 이상)
+   ========================================= */
+@media (min-width: 1024px) {
+  /* 2열 그리드 레이아웃 */
+  .process-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    align-items: start;
+    padding-left: 0;
+  }
+
+  /* 수직선: 중앙 배치 */
+  .center-line {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  /* 오른쪽 리스트 엇박자 (Padding) */
+  .service-list {
+    padding-top: 5rem;
+  }
+
+  /* 카드 높이 고정 (중앙 정렬용) */
+  .service-card {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* --- 커넥터 위치 재정의 (PC) --- */
+  
+  /* 왼쪽 카드 커넥터: 오른쪽으로 뻗음 */
+  .connector-left {
+    left: auto; /* 모바일 설정 초기화 */
+    right: -40px;
+    width: 40px;
+  }
+  .connector-left .dot {
+    left: auto; /* 모바일 설정 초기화 */
+    right: -6px;
+  }
+
+  /* 오른쪽 카드 커넥터: 왼쪽으로 뻗음 */
+  .connector-right {
+    left: -40px;
+    width: 40px;
+  }
+  .connector-right .dot {
+    left: -6px;
+  }
 }
 </style>

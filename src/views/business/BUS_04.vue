@@ -154,138 +154,33 @@ const farmFeatures = [
 
 <style scoped>
 /* =========================================
-   1. Common & Layout
-   ========================================= */
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding: 6rem 0;
-  }
-}
-
-/* =========================================
-   2. Sub Visual
-   ========================================= */
-.sub-visual {
-  position: relative;
-}
-
-.visual-bg {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .visual-bg {
-    height: 400px;
-  }
-}
-
-.overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 70px;
-  position: absolute;
-  inset: 0;
-  background-color: rgba(15, 23, 42, 0.6); /* slate-900 opacity-60 */
-}
-
-.visual-content {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  text-align: center;
-}
-
-.visual-title {
-  color: white;
-  font-size: 1.875rem;
-  font-weight: 900;
-}
-
-@media (min-width: 768px) {
-  .visual-title {
-    font-size: 2.25rem;
-  }
-}
-
-/* Sub Menu Bar */
-.sub-menu-bar {
-  border: 10px solid transparent;
-  background-color: white;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.sub-menu-list {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sub-menu-link {
-  white-space: nowrap;
-  display: block;
-  padding: 1rem 2rem;
-  font-weight: 600;
-  color: #64748b;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s;
-}
-
-.sub-menu-link:hover,
-.sub-menu-link.active {
-  color: #0d9488;
-  border-bottom-color: #0d9488;
-}
-
-/* =========================================
-   3. Page Content
+   1. Page Specific Utilities
+   (공통에 없는 클래스만 유지)
    ========================================= */
 .page-header {
   margin-bottom: 4rem;
 }
 
-.page-title {
+.page-title { 
   font-size: 1.875rem;
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-  .page-title {
-    font-size: 2.25rem;
-  }
-}
 
 .page-desc {
   font-size: 1.125rem;
   color: #475569;
 }
 
-/* Intro Box */
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   2. Intro Box
+   ========================================= */
 .intro-box {
   background-color: #f1f5f9;
   padding: 3rem;
@@ -308,7 +203,9 @@ const farmFeatures = [
   }
 }
 
-/* Content Body */
+/* =========================================
+   3. Content Body & Groups
+   ========================================= */
 .content-body {
   display: flex;
   flex-direction: column;
@@ -330,7 +227,9 @@ const farmFeatures = [
   margin-bottom: 2rem;
 }
 
-/* Cards & Grid */
+/* =========================================
+   4. Cards & Grids (Page Specific)
+   ========================================= */
 .grid-4 {
   display: grid;
   grid-template-columns: 1fr;
@@ -379,6 +278,9 @@ const farmFeatures = [
   white-space: pre-line;
 }
 
+/* =========================================
+   5. Components (Image, Keywords, Flowchart)
+   ========================================= */
 /* Images */
 .image-box {
   text-align: center;
@@ -386,9 +288,6 @@ const farmFeatures = [
 .image-box img {
   max-width: 100%;
   height: auto;
-}
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 /* Keyword Box */
@@ -416,7 +315,9 @@ const farmFeatures = [
   height: auto;
 }
 
-/* Flex Layout (FarmPlus) */
+/* =========================================
+   6. FarmPlus Layout (Flex & List)
+   ========================================= */
 .flex-layout {
   display: flex;
   flex-direction: column;
@@ -443,7 +344,6 @@ const farmFeatures = [
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Lists */
 .list-title {
   font-weight: 700;
   border-bottom: 1px solid #e2e8f0;
