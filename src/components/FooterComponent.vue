@@ -35,7 +35,7 @@ onUnmounted(() => {
       <div class="footer-grid">
         <div class="col-company-info">
           <router-link to="/" class="footer-logo-link">
-            <img src="/image/comm/foot_logo.png" alt="4MS Corp Logo" class="footer-logo" />
+            <img src="/image/comm/foot_logo.png" alt="4MS Corp Logo" class="footer-logo dragging-disable" />
           </router-link>
           <p class="company-desc">
             (주)포엠에스<br />
