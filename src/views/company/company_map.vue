@@ -98,11 +98,16 @@ export default {
         level: 3,
       }
       map_data.value.map = new window.kakao.maps.Map(kakao_map.value, options) // 지도 생성 및 객체 리턴
+
+      // 마커 추가 (선택 사항)
+      new window.kakao.maps.Marker({
+        map: map_data.value.map,
+        position: options.center,
+      })
     }
 
     onMounted(() => {
       // 컴포넌트가 마운트된 후 맵 초기화 함수 실행
-      // Kakao API 스크립트는 index.html에서 로드되므로, 별도의 동적 로딩이 필요 없습니다.
       set_kakao_api()
     })
 

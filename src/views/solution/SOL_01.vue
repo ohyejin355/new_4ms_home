@@ -20,36 +20,36 @@ const currentTab = ref('Ablebot1')
       </div>
       <div class="tab-buttons">
         <button
-          class="btn"
-          :class="{ 'btn-primary': currentTab === 'Ablebot1' }"
+          class="btn bg-slate-200 text-slate-700 hover:bg-slate-300"
+          :class="{ 'bg-primary text-white': currentTab === 'Ablebot1' }"
           @click="currentTab = 'Ablebot1'"
         >
           이해
         </button>
         <button
-          class="btn"
-          :class="{ 'btn-primary': currentTab === 'Ablebot2' }"
+          class="btn bg-slate-200 text-slate-700 hover:bg-slate-300"
+          :class="{ 'bg-primary text-white': currentTab === 'Ablebot2' }"
           @click="currentTab = 'Ablebot2'"
         >
           유형
         </button>
         <button
-          class="btn"
-          :class="{ 'btn-primary': currentTab === 'Ablebot3' }"
+          class="btn bg-slate-200 text-slate-700 hover:bg-slate-300"
+          :class="{ 'bg-primary text-white': currentTab === 'Ablebot3' }"
           @click="currentTab = 'Ablebot3'"
         >
           기능
         </button>
         <button
-          class="btn"
-          :class="{ 'btn-primary': currentTab === 'Ablebot4' }"
+          class="btn bg-slate-200 text-slate-700 hover:bg-slate-300"
+          :class="{ 'bg-primary text-white': currentTab === 'Ablebot4' }"
           @click="currentTab = 'Ablebot4'"
         >
           적용
         </button>
         <button
-          class="btn"
-          :class="{ 'btn-primary': currentTab === 'Ablebot5' }"
+          class="btn bg-slate-200 text-slate-700 hover:bg-slate-300"
+          :class="{ 'bg-primary text-white': currentTab === 'Ablebot5' }"
           @click="currentTab = 'Ablebot5'"
         >
           기대효과
