@@ -4,7 +4,7 @@
       <div class="comp_wrapper">
         <div class="comp_content">
           <div class="comp_text">
-            <h2 class="comp_h2">회사소개</h2>
+            <h2 class="comp_h2 page-title">회사소개</h2>
             <p class="comp_description">미래를 창조하는 주식회사 포엠에스</p>
           </div>
 

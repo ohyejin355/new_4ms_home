@@ -4,7 +4,7 @@
       <div class="comp_wrapper">
         <div class="comp_content">
           <div class="comp_text">
-            <h2 class="comp_h2">CEO 인사말</h2>
+            <h2 class="comp_h2 page-title">CEO 인사말</h2>
             <p class="comp_description">미래를 창조하는 주식회사 포엠에스</p>
           </div>
 
@@ -16,7 +16,7 @@
           </div>
 
           <div class="comp_text">
-            <h3 class="ceo_text">
+            <h3 class="ceo_text page-title">
               안녕하세요?<br />
               저희 포엠에스 웹사이트를 방문해 주신 모든 분들께 감사의 말씀을 드립니다.
             </h3>

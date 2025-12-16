@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-html, body {
-  font-family: "Nanum Gothic", sans-serif;
+html,
+body {
+  font-family: 'Nanum Gothic', sans-serif;
   background-color: rgb(249 250 251 / 1);
 }
 
@@ -123,11 +124,22 @@ html, body {
 
 @media (width >= 48rem) {
   .layout-mobile {
-      display: none !important;
+    display: none !important;
   }
 }
 @media (width < 48rem) {
   .layout-pc {
-      display: none !important;
+    display: none !important;
   }
 }
+
+/* 핵심 컬러: Teal (청록) - 대비 향상 */
+.text-primary {
+  color: #115e59;
+} /* Teal-800 */
+.bg-primary {
+  background-color: #0f766e;
+} /* Teal-700 */
+.hover-bg-primary:hover {
+  background-color: #115e59;
+} /* Teal-800 */

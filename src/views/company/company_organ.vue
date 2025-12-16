@@ -4,7 +4,7 @@
       <div class="comp_wrapper">
         <div class="comp_content">
           <div class="comp_text">
-            <h2 class="comp_h2">조직도</h2>
+            <h2 class="comp_h2 page-title">조직도</h2>
             <p class="comp_description">다양한 업무 경험자로 구성된 주식회사 포엠에스</p>
           </div>
 

@@ -4,7 +4,7 @@
       <div class="comp_wrapper">
         <div class="comp_content">
           <div class="comp_text">
-            <h2 class="comp_h2">오시는길</h2>
+            <h2 class="comp_h2 page-title">오시는길</h2>
             <p class="comp_description">여기는 주식회사 포엠에스입니다.</p>
           </div>
 
@@ -144,5 +144,6 @@ export default {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
 }
 </style>
