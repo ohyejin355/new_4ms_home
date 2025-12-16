@@ -40,7 +40,7 @@ import { currentSubMenu } from './router/menu'
   transition: opacity 0.2s ease;
 }
 
-.fade-enter-from,
+.fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
