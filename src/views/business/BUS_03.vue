@@ -40,14 +40,13 @@ const serviceList = ref([
           <h3 class="section-subtitle text-center">DEVELOPMENT</h3>
 
           <div class="process-layout">
-            
             <div class="center-line"></div>
 
             <div class="step-list">
               <div v-for="(step, index) in processSteps" :key="index" class="step-card">
                 <h4 class="step-title">{{ step.title }}</h4>
                 <p class="step-eng">{{ step.eng }}</p>
-                
+
                 <div class="connector connector-left">
                   <div class="line"></div>
                   <div class="dot"></div>
@@ -58,14 +57,13 @@ const serviceList = ref([
             <div class="service-list">
               <div v-for="(service, index) in serviceList" :key="index" class="service-card">
                 <p class="service-text">{{ service }}</p>
-                
+
                 <div class="connector connector-right">
                   <div class="line"></div>
                   <div class="dot"></div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -77,23 +75,44 @@ const serviceList = ref([
 /* =========================================
    1. Common & Layout
    ========================================= */
-.wrapper { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
-.text-center { text-align: center; }
-.section { padding: 4rem 0; }
-@media (min-width: 768px) { .section { padding: 6rem 0; } }
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.text-center {
+  text-align: center;
+}
+.section {
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
 
 /* =========================================
    2. Page Content
    ========================================= */
-.page-header { margin-bottom: 4rem; }
-.page-title { 
+.page-header {
+  margin-bottom: 4rem;
+}
+.page-title {
   font-size: 1.875rem;
   font-weight: 900;
   color: #0f172a;
   margin-bottom: 1rem;
 }
-@media (min-width: 768px) { .page-title { font-size: 2.25rem; } }
-.page-desc { font-size: 1.125rem; color: #475569; }
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+}
+.page-desc {
+  font-size: 1.125rem;
+  color: #475569;
+}
 
 .intro-box {
   background-color: #f1f5f9;
@@ -102,8 +121,18 @@ const serviceList = ref([
   border-left: 4px solid #0d9488;
   margin-bottom: 4rem;
 }
-.intro-text { font-size: 1.25rem; font-weight: 600; color: #334155; line-height: 1.6; }
-@media (min-width: 768px) { .intro-text { font-size: 1.5rem; } }
+.intro-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+@media (min-width: 768px) {
+  .intro-text {
+    font-size: 1.5rem;
+  }
+}
 
 /* =========================================
    3. Process Section (반응형 적용)
@@ -114,7 +143,10 @@ const serviceList = ref([
 }
 
 .section-subtitle {
-  font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 3rem;
 }
 
 /* --- [Mobile Layout] 기본값 (1024px 미만) --- */
@@ -129,7 +161,7 @@ const serviceList = ref([
 /* 수직선: 모바일에서는 왼쪽에 위치 */
 .center-line {
   position: absolute;
-  left: 0; 
+  left: 0;
   top: 1rem;
   bottom: 1rem;
   width: 1px;
@@ -138,14 +170,16 @@ const serviceList = ref([
 }
 
 /* 컬럼 공통 스타일 */
-.step-list, .service-list {
+.step-list,
+.service-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 /* 카드 공통 스타일 */
-.step-card, .service-card {
+.step-card,
+.service-card {
   padding: 1.5rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -164,9 +198,22 @@ const serviceList = ref([
 }
 
 /* 텍스트 스타일 */
-.step-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-bottom: 0.25rem; }
-.step-eng { font-size: 0.875rem; color: #64748b; }
-.service-text { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin: 0; }
+.step-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+.step-eng {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+.service-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
 
 /* --- [Connectors] 선과 점 (모바일 기본값: 왼쪽 연결) --- */
 .connector {
@@ -178,13 +225,18 @@ const serviceList = ref([
   z-index: -1;
 }
 
-.connector .line { width: 100%; height: 1px; background-color: #cbd5e1; }
+.connector .line {
+  width: 100%;
+  height: 1px;
+  background-color: #cbd5e1;
+}
 .connector .dot {
   position: absolute;
   left: -6px; /* 선 시작점 */
   top: 50%;
   transform: translateY(-50%);
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   background-color: #cbd5e1;
   border-radius: 50%;
   box-shadow: 0 0 0 4px #ffffff;
@@ -225,7 +277,7 @@ const serviceList = ref([
   }
 
   /* --- 커넥터 위치 재정의 (PC) --- */
-  
+
   /* 왼쪽 카드 커넥터: 오른쪽으로 뻗음 */
   .connector-left {
     left: auto; /* 모바일 설정 초기화 */
