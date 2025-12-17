@@ -183,6 +183,7 @@ export default {
   line-height: 1.6;
   white-space: pre-line;
   margin: 0;
+  word-break: keep-all;
 }
 
 @media (max-width: 768px) {
@@ -263,5 +264,6 @@ export default {
   color: #475569;
   font-size: 1rem;
   line-height: 1.5;
+  word-break: keep-all;
 }
 </style>

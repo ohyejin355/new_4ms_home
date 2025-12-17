@@ -9,7 +9,7 @@ const truckSystems = [
     title: '고객관리 시스템',
     desc: '고객정보, 신차구입정보, 고객포인트정보, 판촉물 등의 업무를 처리하고 CRM 기초 정보를 관리하는 시스템',
   },
-  { title: '양도증 발급관리', desc: '형식승인등록, 양도증 발급/미발급,\n조회 등의 업무를 처리' },
+  { title: '양도증 발급관리', desc: '형식승인등록, 양도증 발급/미발급, 조회 등의 업무를 처리' },
   { title: 'PDI(LOGISTIC)', desc: 'Order, 선적, 통관, 입고, 재고, 출고 의 업무를 처리' },
 ]
 
@@ -18,8 +18,8 @@ const truckKeywords = ['계약관리', '영업관리', '보고서관리', '채�
 // Pilot Maintenance 데이터
 const pilotFeatures = [
   '도선예보 신청의 On-Line화 체계 구축',
-  '협회의 e-business를 실현하고 부가수익을 창출 할 수 있는\n프로모션 기능',
-  '최신 기술 적용(웹, 모바일, SMS기술)으로 프로세스의 개선 및\n인건비 절감',
+  '협회의 e-business를 실현하고 부가수익을 창출 할 수 있는 프로모션 기능',
+  '최신 기술 적용(웹, 모바일, SMS기술)으로 프로세스의 개선 및 인건비 절감',
   '협회, 선사, 대리점, 관련업체가 공유할 수 있는 정보이용 체계 완성',
   '대리점의 도선예보 신청서에 의한 모든 작업처리를 일원화',
   '항만의 특성 및 도선구간의 특성에 따라 유연한 도선 배정',
@@ -199,6 +199,7 @@ const farmFeatures = [
   color: #334155;
   line-height: 1.6;
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 @media (min-width: 768px) {
@@ -229,6 +230,7 @@ const farmFeatures = [
   color: #475569;
   line-height: 1.6;
   margin-bottom: 2rem;
+  word-break: keep-all;
 }
 
 /* =========================================
@@ -280,6 +282,7 @@ const farmFeatures = [
   color: #475569;
   line-height: 1.5;
   white-space: pre-line;
+  word-break: keep-all;
 }
 
 /* =========================================
@@ -336,6 +339,7 @@ const farmFeatures = [
 
 .flex-text {
   flex: 1;
+  word-break: keep-all;
 }
 .flex-image {
   flex: 1;
