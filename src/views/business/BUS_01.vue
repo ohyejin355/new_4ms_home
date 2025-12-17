@@ -5,17 +5,17 @@ import { ref } from 'vue'
 const consultingItems = ref([
   {
     title: '유통/물류 부문',
-    desc: '고객의 비즈니스 환경에 최적화된 유통/물류\n시스템 구축을 위한 전문 컨설팅을 제공합니다.',
+    desc: '고객의 비즈니스 환경에 최적화된 유통/물류 시스템 구축을 위한 전문 컨설팅을 제공합니다.',
     imgSrc: '/image/sub/bus_01_01.png',
   },
   {
     title: '자동차(트럭) 부문',
-    desc: '상용차 및 특장차 분야의 특화된 노하우를\n바탕으로 프로세스 개선 및 시스템 설계를\n지원합니다.',
+    desc: '상용차 및 특장차 분야의 특화된 노하우를 바탕으로 프로세스 개선 및 시스템 설계를 지원합니다.',
     imgSrc: '/image/sub/bus_01_02.png',
   },
   {
     title: '축산낙농 부문',
-    desc: '생산부터 유통까지, 축산낙농 분야의 복잡한\n데이터를 통합 관리하는 효율적인 방안을\n제시합니다.',
+    desc: '생산부터 유통까지, 축산낙농 분야의 복잡한 n데이터를 통합 관리하는 효율적인 방안을 제시합니다.',
     imgSrc: '/image/sub/bus_01_03.png',
   },
 ])
@@ -340,6 +340,7 @@ const maintenanceItems = ref([
   line-height: 1.6;
   white-space: pre-line;
   font-size: 1rem;
+  word-break: keep-all;
 }
 
 .grid-5 .card-desc {
