@@ -268,10 +268,10 @@ const maintenanceItems = ref([
   height: 100%;
 }
 
-.biz-card:hover {
+/* .biz-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .card-icon {
   margin-bottom: 1.5rem;
