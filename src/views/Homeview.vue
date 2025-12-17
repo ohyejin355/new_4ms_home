@@ -163,7 +163,7 @@ const solutions = ref([
         </div>
 
         <div class="business-grid">
-          <div class="biz-card card-light wide-card group">
+          <router-link class="biz-card card-light wide-card group" :to="{path: '/business', query: {menuId: 'BUS_02'}}">
             <div class="card-content">
               <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,9 +181,9 @@ const solutions = ref([
             <div class="tags">
               <span v-for="tag in businessItems[0].tags" :key="tag" class="tag">{{ tag }}</span>
             </div>
-          </div>
+          </router-link>
 
-          <div class="biz-card card-dark">
+          <router-link class="biz-card card-dark" :to="{path: '/business', query: {menuId: 'BUS_03'}}">
             <div class="card-content">
               <div class="card-icon-box">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,12 +197,12 @@ const solutions = ref([
               </div>
               <h4 class="card-title">System Dev.</h4>
               <p class="card-desc">
-                정보시스템 진단, 설계 및 최적의 시스템 구축을 통한<br />경쟁력 강화
+                정보시스템 진단, 설계 및 최적의 시스템 구축을 통한 경쟁력 강화
               </p>
             </div>
-          </div>
+          </router-link>
 
-          <div class="biz-card card-primary">
+          <router-link class="biz-card card-primary" :to="{path: '/solution', query: {menuId: 'SOL_01'}}">
             <div class="card-content">
               <div class="card-icon-box">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,9 +217,9 @@ const solutions = ref([
               <h4 class="card-title">AI Solution</h4>
               <p class="card-desc text-light">ABLEBOT 및 스마트팜 등 특화된 자체 솔루션 제공</p>
             </div>
-          </div>
+          </router-link>
 
-          <div class="biz-card card-light wide-card group">
+          <router-link class="biz-card card-light wide-card group" :to="{path: '/business', query: {menuId: 'BUS_04'}}">
             <div class="card-content">
               <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,7 +237,7 @@ const solutions = ref([
             <div class="tags">
               <span v-for="tag in businessItems[1].tags" :key="tag" class="tag">{{ tag }}</span>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </section>
@@ -426,7 +426,6 @@ h4 {
   overflow: hidden;
 
   /* Background Image Setting */
-  /*background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');*/
   background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1170&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
