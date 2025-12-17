@@ -37,13 +37,11 @@ const effectCards = ref([
     <section class="section">
       <div class="wrapper">
         <div class="effect-content">
-          <p class="intro-text">
-            대부분의 선도기업들이 AI도입을 서두르는 이유는 ‘새로운 디지털환경에서의 적극적인
-            대응과 경쟁업종보다 빠른 비즈니스의 변화 방향성과 기회 발굴’에 그 목적이 있으며,
-            실제로 이러한 노력들은 기업의 경쟁력에서 차이를 만들어내고 있습니다.
+          <p class="intro-text break-keep">
+            대부분의 선도기업들이 AI도입을 서두르는 이유는 ‘새로운 디지털환경에서의 적극적인 대응과
+            경쟁업종보다 빠른 비즈니스의 변화 방향성과 기회 발굴’에 그 목적이 있으며, 실제로 이러한
+            노력들은 기업의 경쟁력에서 차이를 만들어내고 있습니다.
           </p>
-
-          
 
           <div class="card-grid">
             <div v-for="(card, index) in effectCards" :key="index" class="card">
@@ -53,7 +51,7 @@ const effectCards = ref([
               <div class="card-body">
                 <p class="card-subtitle">{{ card.subtitle }}</p>
                 <ul class="card-list">
-                  <li v-for="item in card.list" :key="item">{{ item }}</li>
+                  <li v-for="item in card.list" :key="item" class="break-keep">{{ item }}</li>
                 </ul>
               </div>
             </div>
@@ -147,12 +145,13 @@ const effectCards = ref([
 
 .card-list {
   list-style-type: disc;
-  list-style-position: inside;
+  list-style-position: outside;
   padding: 0;
   margin: 0;
   font-size: 0.875rem;
   color: #334155;
   line-height: 1.6;
+  padding-left: calc(var(--spacing) * 6) /* 1.5rem = 24px */;
 }
 
 .card-list li + li {
