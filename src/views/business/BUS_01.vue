@@ -5,18 +5,18 @@ import { ref } from 'vue'
 const consultingItems = ref([
   {
     title: '유통/물류 부문',
-    desc: '고객의 비즈니스 환경에 최적화된 유통/물류 시스템 구축을\n위한 전문 컨설팅을 제공합니다.',
-    imgSrc: '/image/sub/sol_01_01_img.png',
+    desc: '고객의 비즈니스 환경에 최적화된 유통/물류\n시스템 구축을 위한 전문 컨설팅을 제공합니다.',
+    imgSrc: '/image/sub/bus_01_01.png',
   },
   {
     title: '자동차(트럭) 부문',
-    desc: '상용차 및 특장차 분야의 특화된 노하우를 바탕으로 프로세스 개선 및 시스템 설계를 지원합니다.',
-    imgSrc: '/image/sub/sol_02_01_img.png',
+    desc: '상용차 및 특장차 분야의 특화된 노하우를\n바탕으로 프로세스 개선 및 시스템 설계를\n지원합니다.',
+    imgSrc: '/image/sub/bus_01_02.png',
   },
   {
     title: '축산낙농 부문',
-    desc: '생산부터 유통까지, 축산낙농 분야의 복잡한 데이터를 통합\n관리하는 효율적인 방안을 제시합니다.',
-    imgSrc: '/image/sub/sol_04_01_img.png',
+    desc: '생산부터 유통까지, 축산낙농 분야의 복잡한\n데이터를 통합 관리하는 효율적인 방안을\n제시합니다.',
+    imgSrc: '/image/sub/bus_01_03.png',
   },
 ])
 
@@ -25,27 +25,27 @@ const systemItems = ref([
   {
     title: '경영 부문',
     desc: '기업의 핵심 자원(ERP) 및 고객 관계(CRM) 관리를 위한 맞춤형 시스템을\n개발합니다.',
-    imgSrc: '/image/sub/pro_logo_01.png',
+    imgSrc: '/image/sub/bus_01_04.png',
   },
   {
     title: '공공 부문',
     desc: '투명하고 효율적인 대국민 서비스를 위한 공공 정보 시스템을 구축합니다.',
-    imgSrc: '/image/sub/pro_logo_02.png',
+    imgSrc: '/image/sub/bus_01_05.png',
   },
   {
     title: '제조 부문',
     desc: '생산관리시스템(MES) 및 품질 관리 시스템을 제공하여 생산 공정의 효율을 극대화합니다.',
-    imgSrc: '/image/sub/pro_logo_03.png',
+    imgSrc: '/image/sub/bus_01_06.png',
   },
   {
     title: '유통 부문',
     desc: '재고·주문·배송을 실시간으로 관리하는 통합 유통 플랫폼을 개발합니다.',
-    imgSrc: '/image/sub/pro_logo_04.png',
+    imgSrc: '/image/sub/bus_01_07.png',
   },
   {
     title: '축산 부문',
     desc: '농가별 사육 환경, 출하 정보 등을 체계적으로 관리하는 스마트 축산 시스템을 구현합니다.',
-    imgSrc: '/image/sub/pro_logo_05.png',
+    imgSrc: '/image/sub/bus_01_08.png',
   },
 ])
 
@@ -53,18 +53,18 @@ const systemItems = ref([
 const webItems = ref([
   {
     title: '응용 소프트웨어 개발',
-    desc: '다양한 산업 분야에 필요한 특정 목적의 데스크톱 및 웹 기반\n응용 프로그램을 개발합니다.',
-    imgSrc: '/image/sub/sol_06_01_img.png',
+    desc: '다양한 산업 분야에 필요한 특정 목적의\n데스크톱 및 웹 기반응용 프로그램을\n개발합니다.',
+    imgSrc: '/image/sub/bus_01_09.png',
   },
   {
     title: 'WebSite',
-    desc: '기업의 정체성을 담은 반응형 웹사이트를 구축하여 효과적인\n온라인 홍보를 지원합니다.',
-    imgSrc: '/image/sub/sol_06_02_img.png',
+    desc: '기업의 정체성을 담은 반응형 웹사이트를\n구축하여 효과적인 온라인 홍보를 지원합니다.',
+    imgSrc: '/image/sub/bus_01_10.png',
   },
   {
     title: 'B2B/B2C',
-    desc: '안정적이고 확장 가능한 B2B 및 B2C E-커머스 플랫폼을\n제공합니다.',
-    imgSrc: '/image/sub/sol_07_01_img.png',
+    desc: '안정적이고 확장 가능한 B2B 및 B2C E-커머스 플랫폼을 제공합니다.',
+    imgSrc: '/image/sub/bus_01_11.png',
   },
 ])
 
@@ -73,17 +73,17 @@ const maintenanceItems = ref([
   {
     title: '소프트웨어 운영지원',
     desc: '개발된 시스템이 최적의 성능을 유지하도록\n지속적인 모니터링과 업데이트를 지원합니다.',
-    imgSrc: '/image/sub/sol_07_02_img.png',
+    imgSrc: '/image/sub/bus_01_12.png',
   },
   {
     title: '시스템 운영',
-    desc: 'IT 인프라 전반에 대한 24/7 운영 및 관리로 비즈니스의\n연속성을 보장합니다.',
-    imgSrc: '/image/sub/sol_07_03_img.png',
+    desc: 'IT 인프라 전반에 대한 24/7 운영 및 관리로\n비즈니스의 연속성을 보장합니다.',
+    imgSrc: '/image/sub/bus_01_13.png',
   },
   {
     title: '고객지원',
-    desc: '시스템 사용 중 발생하는 모든 기술적 문의와 문제에 대해\n신속하고 정확하게 지원합니다.',
-    imgSrc: '/image/sub/pro_logo_09.png',
+    desc: '시스템 사용 중 발생하는 모든 기술적 문의와\n문제에 대해 신속하고 정확하게 지원합니다.',
+    imgSrc: '/image/sub/bus_01_14.png',
   },
 ])
 </script>
@@ -158,6 +158,48 @@ const maintenanceItems = ref([
         </div>
       </div>
     </section>
+    <footer class="py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-gray-500 text-sm">© 2025 All rights reserved by flaticon.</p>
+
+        <div class="mt-4 text-[11px] text-gray-400">
+          <p>
+            이 사이트의 픽토그램은
+            <a
+              href="https://www.flaticon.com/"
+              class="hover:text-blue-500 underline decoration-dotted"
+              >Flaticon</a
+            >의
+            <a
+              href="https://www.freepik.com"
+              class="hover:text-blue-500 underline decoration-dotted mr-px"
+              >Freepik</a
+            >,
+            <a
+              href="https://www.flaticon.com/kr/authors/dighital"
+              class="hover:text-blue-500 underline decoration-dotted mr-px"
+              >Dighital</a
+            >,
+            <a
+              href="https://www.flaticon.com/kr/authors/monkik"
+              class="hover:text-blue-500 underline decoration-dotted"
+              >monkik</a
+            >,
+            <a
+              href="https://www.flaticon.com/kr/authors/maan-icons"
+              class="hover:text-blue-500 underline decoration-dotted"
+              >Mann Icons</a
+            >,
+            <a
+              href="https://www.flaticon.com/kr/authors/syafii5758"
+              class="hover:text-blue-500 underline decoration-dotted"
+              >syafii5758</a
+            >
+            제작 아이콘을 사용하였습니다.
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
