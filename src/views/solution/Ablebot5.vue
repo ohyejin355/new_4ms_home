@@ -73,9 +73,8 @@ const effectCards = ref([
 
 .intro-text {
   color: #334155; /* slate-700 */
-  line-height: 1.625;
-  margin-bottom: 3rem;
-  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 2rem;
   white-space: pre-line;
   font-size: 1.125rem;
 }

@@ -24,13 +24,7 @@ const serviceList = ref([
   },
   {
     title: 'Knowledge (지식 서비스)',
-    items: [
-      'Academic',
-      'Entity Linking',
-      'Knowledge Exploration',
-      'QnA Maker',
-      'Recommendations',
-    ],
+    items: ['Academic', 'Entity Linking', 'Knowledge Exploration', 'QnA Maker', 'Recommendations'],
   },
   {
     title: 'Search (검색 서비스)',
@@ -64,8 +58,6 @@ const featureList = ref([
             AI에서 제공되는 인지서비스(Cognitive Service)를 통해 고객과의 다양한 인터페이스 및
             상호작용이 가능합니다.
           </p>
-
-          
 
           <div class="service-grid">
             <div v-for="service in serviceList" :key="service.title" class="service-card">
@@ -106,7 +98,6 @@ const featureList = ref([
   color: #334155; /* slate-700 */
   line-height: 1.6;
   margin-bottom: 2rem;
-  text-align: center;
   white-space: pre-line;
   font-size: 1.125rem;
 }
