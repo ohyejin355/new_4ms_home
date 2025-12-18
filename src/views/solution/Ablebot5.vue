@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const effectCards = ref([
   {
     title: '새로운 디지털환경 대응과\n서비스 개선',
-    subtitle: '고객의 행동변화로 인한 Digital Traffic의 증가와 대응',
+    subtitle: '고객 행동 변화에 따른 디지털 트래픽\n 확대 대응',
     list: [
       '비대면채널에서의 고객만족도 향상',
       '맞춤 금융상품 추천을 통한 매출증진 기여',
@@ -13,7 +13,7 @@ const effectCards = ref([
   },
   {
     title: '새로운 업무효율성과\n수익성 향상',
-    subtitle: '방대한 Content/빅데이터에 대한 지식화 및 손쉬운 확장',
+    subtitle: '방대한 콘텐츠·빅데이터를 지식화하고 손쉽게 확장',
     list: [
       '내부 및 외부지식에 대한 손쉬운 접근을 통해 업무효율성 향상',
       '인력의 세대교체 = 지적자산의 효율적 관리',
@@ -21,8 +21,8 @@ const effectCards = ref([
     ],
   },
   {
-    title: '프로세스의 자동화와\n업무연속성 향상',
-    subtitle: 'IT–Human 프로세스의 업무분절을 최소화',
+    title: '프로세스의 자동화와 업무연속성 \n향상',
+    subtitle: 'IT와 인력 간 업무 프로세스 분절 최소화',
     list: [
       '단순반복적인 일상업무를 최소화, 업무의 생산성 제고',
       '24시간 고객응대율을 향상',
@@ -141,6 +141,7 @@ const effectCards = ref([
   color: #0f172a;
   font-size: 1rem;
   line-height: 1.4;
+  white-space: pre-line;
 }
 
 .card-list {
