@@ -12,11 +12,15 @@ const currentTab = ref('Ablebot1')
 </script>
 
 <template>
-  <div class="solution-page">
-    <div class="container">
-      <div class="page-title">
-        <h2>able bot</h2>
-        <p>상황인지기반 챗봇</p>
+  <section class="solution-page">
+    <section class="section">
+      <div class="text-center mb-16">
+        <h2
+          class="text-[1.875rem]/[36px] font-black text-slate-900 mb-4 md:text-[2.25rem]/[36px] font-mont"
+        >
+          able bot
+        </h2>
+        <p class="text-[1.125rem]/[18px] text-slate-600">상황인지기반 챗봇</p>
       </div>
       <div class="tab-buttons">
         <button
@@ -67,8 +71,8 @@ const currentTab = ref('Ablebot1')
 
         <Ablebot5 v-if="currentTab === 'Ablebot5'" />
       </div>
-    </div>
-  </div>
+    </section>
+  </section>
 </template>
 
 <style>
@@ -96,14 +100,6 @@ const currentTab = ref('Ablebot1')
 .page-title {
   text-align: center;
   margin-bottom: 4rem;
-}
-
-.page-title h2 {
-  margin-top: 5rem;
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: #0f172a;
-  margin-bottom: 1rem;
 }
 
 .page-title p {

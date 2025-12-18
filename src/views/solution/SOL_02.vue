@@ -11,19 +11,20 @@ const sallyImages = ref([
 <template>
   <div class="sally-plan-page">
     <section class="section">
+      <div class="text-center mb-16">
+        <h2
+          class="text-[1.875rem]/[36px] font-black text-slate-900 mb-4 md:text-[2.25rem]/[36px] font-mont"
+        >
+          샐리플랜
+        </h2>
+        <p class="text-[1.125rem]/[18px] text-slate-600">더 잘 낭비하기 위한 초간편 소비 플래너</p>
+      </div>
       <div class="wrapper">
-        <div class="page-header text-center">
-          <h2 class="page-title">샐리플랜</h2>
-          <p class="page-desc">더 잘 낭비하기 위한 초간편 소비 플래너</p>
-        </div>
-
         <div class="sally-content">
           <p class="intro-text">
             샐리플랜은 (주)셉템과 (주)포엠에스가 함께 개발한 첫번째 마이데이터 서비스입니다. 향후
             AI기반 금융상품 개발 등 다양한 시도를 통해 차별화된 서비스를 제공하겠습니다.
           </p>
-          
-          
 
           <div class="image-list">
             <div v-for="(img, index) in sallyImages" :key="index" class="img-item">
