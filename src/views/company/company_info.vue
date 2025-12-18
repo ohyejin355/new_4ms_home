@@ -10,83 +10,78 @@
 
           <div class="grid_box">
             <div class="white_box">
-              <div class="box_div bg-teal-100 text-teal-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 21h16.5M4.5 21V8.75A2.25 2.25 0 0 1 6.75 6.5h10.5a2.25 2.25 0 0 1 2.25 2.25V21M8.25 13.5h7.5M8.25 16.5h7.5"
-                  />
+              <div class="box_div">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20"
+                      stroke="#00897B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
                 </svg>
               </div>
-              <p class="category text-slate-500">업종</p>
+              <p class="category text-slate-500 mt-4">업종</p>
               <p class="value text-slate-800">소프트웨어<br />개발 및 자문, 공급업</p>
             </div>
             <div class="white_box">
-              <div class="box_div bg-cyan-100 text-cyan-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16.5 6.375V6h-6v.375m6 0a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-6a2.25 2.25 0 0 1-2.25-2.25v-7.5a2.25 2.25 0 0 1 2.25-2.25h6Z"
-                  />
+              <div class="box_div">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z"
+                      fill="#00ACC1"
+                    ></path>
+                    <path
+                      d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                      stroke="#00ACC1"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    ></path>
+                    <path
+                      d="M12 14C12 13.8333 12 13.6667 12 13.5C12 13.5 12 12 14 11C16 10 15.5 7 12.5 7C9.5 7 9.5 9.5 9.5 9.5V10"
+                      stroke="#00ACC1"
+                      stroke-width="2"
+                    ></path>
+                  </g>
                 </svg>
               </div>
-              <p class="category text-slate-500">업태</p>
+              <p class="category text-slate-500 mt-4">업태</p>
               <p class="value text-slate-800">서비스</p>
             </div>
             <div class="white_box">
-              <div class="box_div bg-indigo-100 text-indigo-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75Z"
-                  />
+              <div class="box_div">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M7 1C6.44772 1 6 1.44772 6 2V3H5C3.34315 3 2 4.34315 2 6V20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20V6C22 4.34315 20.6569 3 19 3H18V2C18 1.44772 17.5523 1 17 1C16.4477 1 16 1.44772 16 2V3H8V2C8 1.44772 7.55229 1 7 1ZM16 6V5H8V6C8 6.55228 7.55229 7 7 7C6.44772 7 6 6.55228 6 6V5H5C4.44772 5 4 5.44772 4 6V9H20V6C20 5.44772 19.5523 5 19 5H18V6C18 6.55228 17.5523 7 17 7C16.4477 7 16 6.55228 16 6ZM4 15V11H8V15H4ZM4 17V20C4 20.5523 4.44772 21 5 21H8V17H4ZM10 17V21H14V17H10ZM16 17V21H19C19.5523 21 20 20.5523 20 20V17H16ZM20 15H16V11H20V15ZM14 15H10V11H14V15Z"
+                      fill="#5a67d8"
+                    ></path>
+                  </g>
                 </svg>
               </div>
-              <p class="category text-slate-500">설립일</p>
+              <p class="category text-slate-500 mt-4">설립일</p>
               <p class="value text-slate-800">2016년 9월 8일</p>
             </div>
             <div class="white_box">
-              <div class="box_div bg-pink-100 text-pink-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-1.262c-.528-1.76-3.132-3.132-5.75-3.132-1.226 0-2.308.28-3.22.754-1.428.473-2.549 1.25-3.415 2.253a9.337 9.337 0 0 0 4.121 1.262ZM12 12a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
-                  />
+              <div class="box_div">
+                <svg fill="#EC4899" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M19.73,16.663A3.467,3.467,0,0,0,20.5,14.5a3.5,3.5,0,0,0-7,0,3.467,3.467,0,0,0,.77,2.163A6.04,6.04,0,0,0,12,18.69a6.04,6.04,0,0,0-2.27-2.027A3.467,3.467,0,0,0,10.5,14.5a3.5,3.5,0,0,0-7,0,3.467,3.467,0,0,0,.77,2.163A6,6,0,0,0,1,22a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1A6,6,0,0,0,19.73,16.663ZM7,13a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,7,13ZM3.126,21a4,4,0,0,1,7.748,0ZM17,13a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,17,13Zm-3.874,8a4,4,0,0,1,7.748,0ZM6,2V8A1,1,0,0,0,7,9H9.865l1.367,1.641a1,1,0,0,0,1.536,0L14.135,9H17a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H7A1,1,0,0,0,6,2ZM8,3h8V7H13.667a1,1,0,0,0-.769.359L12,8.438l-.9-1.079A1,1,0,0,0,10.333,7H8Z"
+                    ></path>
+                  </g>
                 </svg>
               </div>
-              <p class="category text-slate-500">임직원수</p>
+              <p class="category text-slate-500 mt-4">임직원수</p>
               <p class="value text-slate-800">45명</p>
             </div>
           </div>
