@@ -34,12 +34,10 @@
           </div>
 
           <div>
-            <!-- * Daum 지도 - 지도퍼가기 -->
             <div
-              class="daum-roughmap-container"
+              class="daum-roughmap-container w-full lg:h-[80vh] sm:h-[50vh]"
               id="map-container"
               ref="kakao_map"
-              :style="{ width: '100%', height: '80vh' }"
             ></div>
 
             <div class="text-center mt-16">
