@@ -1,85 +1,64 @@
-import { menu, currentMenu, currentSubMenu, getMenu } from '@/router/menu.js';
+import { currentMenuId } from '@/router/menu.js'
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/Homeview.vue'
-
-const subMenuView = import.meta.glob('../views/**/*.vue');
-let queryMenuID = null;
+import HomeView from '@/views/Homeview.vue';
+import LoginView from '@/views/LoginView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
       name: 'home',
+      path: '/',
       components: {
         default: HomeView,
-      },
+        'HOME': HomeView,
+        'COM_01': () => import('../views/company/company_info.vue'),
+        'COM_02': () => import('../views/company/company_ceo.vue'),
+        'COM_03': () => import('../views/company/company_history.vue'),
+        'COM_04': () => import('../views/company/company_map.vue'),
+        'COM_05': () => import('../views/company/company_organ.vue'),
+        'BUS_01': () => import('../views/business/BUS_01.vue'),
+        'BUS_02': () => import('../views/business/BUS_02.vue'),
+        'BUS_03': () => import('../views/business/BUS_03.vue'),
+        'BUS_04': () => import('../views/business/BUS_04.vue'),
+        'SOL_01': () => import('../views/solution/SOL_01.vue'),
+        'SOL_02': () => import('../views/solution/SOL_02.vue'),
+        'PJT_01': () => import('../views/project/PJT_01.vue'),
+        'PJT_02': () => import('../views/project/PJT_02.vue'),
+        // 여기로 GNB 메뉴들이 추가됩니다.
+      }
     },
+    {
+      name: 'login',
+      path: '/login',
+      components: {
+        default: LoginView,
+        'LOGIN': LoginView,
+        // 'RESET': PasswordResetView,
+      }
+    },
+    {
+      name: 'employees',
+      path: '/employees',
+      components: {
+        default: HomeView,
+        // 여기로 직원용 메뉴들이 추가됩니다.
+      }
+    }
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  currentMenu.value = menu.value.filter((o) => o.path === to.path)[0];
-
-  if(typeof currentMenu.value == 'undefined' || !currentMenu.value){
-
-    // fetch menu
-    menu.value = getMenu();
-
-    // add menu to router
-    createMenuRoute().forEach(r => router.addRoute(r));
-
-    currentMenu.value = menu.value.filter((o) => o.path === to.path)[0];
-
-    if(to.path != '/'){
-      return next(to.path);
-    }
-  }
-
-  if (to.query.menuId) {
-    queryMenuID = to.query.menuId;
+  if(to.query.menuId){
+    currentMenuId.value = to.query.menuId;
     next(to.path);
-  } else if(to.path !== '/') {
-    currentSubMenu.value = currentMenu.value.subMenu.menu[0];
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    next();
   } else {
-    currentSubMenu.value = {};
-    window.scrollTo({ top: 0, behavior: 'instant' });
     next();
   }
 });
 
 router.afterEach(() => {
-  if(queryMenuID) {
-    currentSubMenu.value = currentMenu.value.subMenu.menu.filter((o) => o.menuId === queryMenuID)[0];
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    queryMenuID = null;
-  }
+  window.scrollTo({ top: 0, behavior: 'instant' });
 });
 
-function createMenuRoute() {
-  const routes = [];
-
-  menu.value.forEach((m) => {
-    const baseUrl = '../views' + m.path;
-    const newRoute = {
-      path: m.path,
-      name: m.name,
-      components: {}
-    };
-
-    newRoute.components.default = subMenuView[(baseUrl + `/${m.subMenu.menu[0].menuId}.vue`).toString()];
-    m.subMenu.menu.forEach((sm) => {
-      if (sm.componentName) {
-        newRoute.components[sm.componentName] = subMenuView[(baseUrl + `/${sm.menuId}.vue`).toString()];
-      }
-    });
-
-    routes.push(newRoute);
-  });
-
-  return routes;
-};
-
-export default router
+export default router;

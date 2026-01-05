@@ -1,30 +1,24 @@
 <template>
   <div class="sub-visual relative mt-20">
-    <div
-      class="visual-bg relative h-75 bg-cover bg-center flex items-center justify-center md:pt-32 md:pb-32"
-      style="background-image: url('/image/sub/sub_visual_img_bg.png')"
-    >
+    <div class="visual-bg relative h-75 bg-cover bg-center flex items-center justify-center md:pt-32 md:pb-32 hidden md:block" style="background-image: url('/image/sub/sub_visual_img_bg.png')">
       <div class="overlay absolute inset-0 flex items-center justify-center bg-slate-900/60">
-        <div
-          class="visual-content relative z-10 w-full text-center flex items-center justify-center"
-        >
+        <div class="visual-content relative z-10 w-full text-center flex items-center justify-center">
           <h1 class="visual-title text-white text-3xl font-black font-mont md:text-4xl">
-            {{ currentMenu.subMenu.title }}
+            {{ publicMenuList().filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.name }}
           </h1>
         </div>
       </div>
     </div>
 
-    <div class="sub-menu-bar bg-white border-b border-slate-200 dragging-disable">
+    <div class="sub-menu-bar bg-white border-b border-slate-200 dragging-disable hidden md:block">
       <div class="wrapper">
         <ul class="sub-menu-list h-16 flex justify-center list-none p-0 m-0">
           <li
-            :class="{ active: currentSubMenu === menu }"
+            v-for="menu in publicMenuList().filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.menu"
+            :key="menu.id"
+            :class="{ active: menu.id === currentMenuId }"
             class="sub-menu-link whitespace-nowrap py-2 px-4 font-semibold leading-12 text-slate-500 no-underline border-b-2 border-transparent transition-all duration-300 cursor-pointer hover:text-teal-600 hover:border-teal-600"
-            v-for="menu in currentMenu.subMenu.menu"
-            :key="menu"
-            :update:to="menu.componentPath"
-            @click="onSubMenuClick(menu)"
+            @click="onSubMenuClick(menu.id)"
           >
             {{ menu.name }}
           </li>
@@ -35,10 +29,10 @@
 </template>
 
 <script setup>
-import { currentMenu, currentSubMenu } from '@/router/menu.js'
+import { currentMenuId, publicMenuList } from '@/router/menu.js'
 
 const onSubMenuClick = (menu) => {
-  currentSubMenu.value = menu
+  currentMenuId.value = menu
 }
 </script>
 

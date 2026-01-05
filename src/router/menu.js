@@ -1,77 +1,102 @@
-/**
- * 사용 예시
- *  import { menu, currentMenu, currentSubMenu } from '@/router/menu.js'
-
-    <div>{{ currentMenu.name }}</div>
-    <div>{{ currentSubMenu.name }}</div>
-
- * <router-link> 예시
-    <!-- 대메뉴 이동 -->
-    <router-link :to="/business"> 비즈니스 </router-link>
-    <!-- 중메뉴 이동 -->
-    <router-link :to="{path: '/business', query: {menuId: 'BUS_02'}}> 비즈니스 > 솔루션 </router-link>
-
- * TO-DO: 서버 연결 후 getMenuList 변경
- */
-
 import { ref } from 'vue';
 
-const menu = ref([]);
-const currentMenu = ref({});
-const currentSubMenu = ref({});
-
-function getMenu() {
+const currentMenuId = ref('HOME');
+const publicMenuList = () => {
   return [
     {
-      name: 'About',
-      path: '/company',
-      subMenu: {
-        title: '회사소개',
-        menu: [
-          { menuId: 'company_info', name: '회사소개', componentName: 'info' },
-          { menuId: 'company_ceo', name: 'CEO인사말', componentName: 'ceo' },
-          { menuId: 'company_history', name: '회사연혁', componentName: 'history' },
-          { menuId: 'company_organ', name: '조직도', componentName: 'organization' },
-          { menuId: 'company_map', name: '오시는길', componentName: 'map' },
-        ],
-      },
+      id: 'COM',
+      name: '회사소개',
+      engName: 'ABOUT',
+      menu: [
+        {
+          id: 'COM_01',
+          name: '회사소개',
+          desc: '미래를 창조하는 주식회사 포엠에스'
+        },
+        {
+          id: 'COM_02',
+          name: 'CEO인사말',
+          desc: '미래를 창조하는 주식회사 포엠에스'
+        },
+        {
+          id: 'COM_03',
+          name: '회사연혁',
+          desc: '다양한 업무 경험자로 구성된 주식회사 포엠에스'
+        },
+        {
+          id: 'COM_04',
+          name: '조직도',
+          desc: '다양한 업무 경험자로 구성된 주식회사 포엠에스'
+        },
+        {
+          id: 'COM_05',
+          name: '오시는길',
+          desc: '여기는 주식회사 포엠에스입니다'
+        },
+      ]
     },
     {
-      name: 'Business',
-      path: '/business',
-      subMenu: {
-        title: '사업영역',
-        menu: [
-          { menuId: 'BUS_01', name: '사업영역', componentName: 'business' },
-          { menuId: 'BUS_02', name: 'SI컨설팅', componentName: 'solution' },
-          { menuId: 'BUS_03', name: 'SI개발', componentName: 'develop' },
-          { menuId: 'BUS_04', name: 'SI운영', componentName: 'maintenance' },
-        ],
-      },
+      id: 'BUS',
+      name: '사업영역',
+      engName: 'BUSINESS',
+      menu: [
+        {
+          id: 'BUS_01',
+          name: '사업영역',
+          desc: '현장 경험을 바탕으로 고객 비즈니스에 최적화된 IT 솔루션 제공'
+        },
+        {
+          id: 'BUS_02',
+          name: 'SI컨설팅',
+          desc: '안정적인 시스템 구축을 위한 실무 중심 SI 컨설팅 서비스'
+        },
+        {
+          id: 'BUS_03',
+          name: 'SI개발',
+          desc: '민간, 공공, 금융 등 다양한 사업분야 개발'
+        },
+        {
+          id: 'BUS_04',
+          name: 'SI운영',
+          desc: '안정적으로 고객의 시스템을 관리 및 운영'
+        },
+      ]
     },
     {
-      name: 'Solutions',
-      path: '/solution',
-      subMenu: {
-        title: '솔루션',
-        menu: [
-          { menuId: 'SOL_01', name: 'able bot', componentName: 'ableBot' },
-          { menuId: 'SOL_02', name: 'sally plan', componentName: 'sallyPlan' },
-        ],
-      },
+      id: 'SOL',
+      name: '솔루션',
+      engName: 'SOLUTION',
+      menu: [
+        {
+          id: 'SOL_01',
+          name: 'able bot',
+          desc: '상황인지기반 챗봇'
+        },
+        {
+          id: 'SOL_02',
+          name: 'sally plan',
+          desc: '잘 소비하기 위한 초간편 플래너'
+        },
+      ]
     },
     {
-      name: 'Project',
-      path: '/project',
-      subMenu: {
-        title: '프로젝트',
-        menu: [
-          { menuId: 'PJT_01', name: '주요프로젝트', componentName: 'info' },
-          { menuId: 'PJT_02', name: '주요협력사', componentName: 'partner' },
-        ],
-      },
+      id: 'PJT',
+      name: '프로젝트',
+      engName: 'PROJECT',
+      menu: [
+        {
+          id: 'PJT_01',
+          name: '주요프로젝트',
+          desc: '주식회사 포엠에스는 다양한 업무를 수행하고 있습니다'
+        },
+        {
+          id: 'PJT_02',
+          name: '주요협력사',
+          desc: '다양한 기업들과 협력하여 시스템 개발에 힘쓰고 있습니다'
+        },
+      ]
     },
   ]
 };
 
-export { menu, currentMenu, currentSubMenu, getMenu };
+export { currentMenuId, publicMenuList };
