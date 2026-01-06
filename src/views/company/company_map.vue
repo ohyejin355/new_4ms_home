@@ -35,7 +35,7 @@
 
           <div>
             <div
-              class="daum-roughmap-container w-full lg:h-[80vh] sm:h-[50vh]"
+              class="daum-roughmap-container w-full lg:h-[80vh] sm:h-[50vh] min-h-[50vh]"
               id="map-container"
               ref="kakao_map"
             ></div>
