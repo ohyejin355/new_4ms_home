@@ -57,8 +57,8 @@ const solutions = ref([
             첨단 기술을 통해 고객의 비즈니스 혁신을 이끕니다.
           </p>
           <div class="hero-buttons">
-            <router-link to="/business" class="btn btn-primary">사업영역 보기</router-link>
-            <router-link to="/solution" class="btn btn-outline">솔루션 확인</router-link>
+            <router-link to="/" class="btn btn-primary">사업영역 보기</router-link>
+            <router-link to="/" class="btn btn-outline">솔루션 확인</router-link>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@ const solutions = ref([
         </div>
 
         <div class="business-grid">
-          <router-link class="biz-card card-light wide-card group" :to="{path: '/business', query: {menuId: 'BUS_02'}}">
+          <router-link class="biz-card card-light wide-card group" :to="{path: '/', query: {menuId: 'BUS_02'}}">
             <div class="card-content">
               <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ const solutions = ref([
             </div>
           </router-link>
 
-          <router-link class="biz-card card-dark" :to="{path: '/business', query: {menuId: 'BUS_03'}}">
+          <router-link class="biz-card card-dark" :to="{path: '/', query: {menuId: 'BUS_03'}}">
             <div class="card-content">
               <div class="card-icon-box">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,7 +202,7 @@ const solutions = ref([
             </div>
           </router-link>
 
-          <router-link class="biz-card card-primary" :to="{path: '/solution', query: {menuId: 'SOL_01'}}">
+          <router-link class="biz-card card-primary" :to="{path: '/', query: {menuId: 'SOL_01'}}">
             <div class="card-content">
               <div class="card-icon-box">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -219,7 +219,7 @@ const solutions = ref([
             </div>
           </router-link>
 
-          <router-link class="biz-card card-light wide-card group" :to="{path: '/business', query: {menuId: 'BUS_04'}}">
+          <router-link class="biz-card card-light wide-card group" :to="{path: '/', query: {menuId: 'BUS_04'}}">
             <div class="card-content">
               <div class="card-icon-box group-hover-bg-primary">
                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">

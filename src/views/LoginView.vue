@@ -66,9 +66,11 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-// import { menu, createMenuToRoute } from '@/router/menu';
+import { employeesMenuList } from '@/router/menu.js';
+import { userStore } from '@/store/pinia.store.js';
 
 const router = useRouter();
+const session = userStore();
 
 const loginInfo = ref({
   email: 'admin',
@@ -110,25 +112,32 @@ const loginSubmit = async () => {
   //   });
   if(loginInfo.value.email === 'admin' && loginInfo.value.password === '4ms1001'){
     // TO-DO: 메뉴 재조회(메뉴 조회기능 개발 필요)
-    // menu.value.push(
-    //   {
-    //     name: 'Employee',
-    //     path: '/employee',
-    //     subMenu: {
-    //       title: '',
-    //       menu: [
-    //         { menuId: 'EMP_01', name: '경비사용등록', componentName: 'register_expenses' },
-    //         { menuId: 'EMP_02', name: '경비사용조회', componentName: 'retrieve_expenses' },
-    //       ],
-    //     },
-    //     meta: {
-    //       showFooter: false,
-    //       isGlobalMenu: true,
-    //     },
-    //   },
-    // )
-    // createMenuToRoute(router);
-    router.push('/');
+    employeesMenuList.value = [
+      {
+        id: 'INF',
+        name: '내정보',
+        engName: '내 정보',
+      },
+      {
+        id: 'FIN',
+        name: '재무/회계',
+        engName: 'Finance',
+        menu: [
+          {
+            id: 'FIN_01',
+            name: '경비신청',
+            desc: '경비신청 메뉴입니다.'
+          },
+          {
+            id: 'FIN_02',
+            name: '경비내역',
+            desc: '경비내역 메뉴입니다.'
+          },
+        ]
+      },
+    ];
+    session.login(loginInfo.value.email, loginInfo.value.password, '관리자');
+    router.push({path: '/', query: {menuId: 'HOME'}});
   } else {
     alert("등록되지 않은 이메일이거나 틀린 비밀번호입니다.");
   }

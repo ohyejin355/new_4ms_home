@@ -4,7 +4,7 @@
       <div class="overlay absolute inset-0 flex items-center justify-center bg-slate-900/60">
         <div class="visual-content relative z-10 w-full text-center flex items-center justify-center">
           <h1 class="visual-title text-white text-3xl font-black font-mont md:text-4xl">
-            {{ publicMenuList().filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.name }}
+            {{ publicMenuList.filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.name }}
           </h1>
         </div>
       </div>
@@ -14,7 +14,7 @@
       <div class="wrapper">
         <ul class="sub-menu-list h-16 flex justify-center list-none p-0 m-0">
           <li
-            v-for="menu in publicMenuList().filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.menu"
+            v-for="menu in publicMenuList.filter((m) => m.id === currentMenuId.substring(0, 3))[0]?.menu"
             :key="menu.id"
             :class="{ active: menu.id === currentMenuId }"
             class="sub-menu-link whitespace-nowrap py-2 px-4 font-semibold leading-12 text-slate-500 no-underline border-b-2 border-transparent transition-all duration-300 cursor-pointer hover:text-teal-600 hover:border-teal-600"

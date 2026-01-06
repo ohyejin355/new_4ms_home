@@ -4,8 +4,10 @@ html {
   overflow-y: scroll;
 }
 
-html.stop-scroll {
-  overflow: hidden;
+@media (width < 48rem) {
+  html.stop-scroll {
+    overflow: hidden;
+  }
 }
 
 html,
@@ -22,6 +24,7 @@ body {
 
 .section {
   padding: 4rem 0;
+  min-width: 320px;
 }
 
 @media (min-width: 768px) {
@@ -155,3 +158,31 @@ body {
 .hover-bg-primary:hover {
   background-color: #115e59;
 } /* Teal-800 */
+
+
+input[type="number"].no-icons::-webkit-inner-spin-button,
+input[type="number"].no-icons::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].no-icons {
+  -moz-appearance: textfield;
+}
+
+input[type="search"].no-icons::-webkit-search-clear-button,
+input[type="search"].no-icons::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="date"].no-icons::-webkit-calendar-picker-indicator,
+input[type="time"].no-icons::-webkit-calendar-picker-indicator,
+input[type="month"].no-icons::-webkit-calendar-picker-indicator,
+input[type="week"].no-icons::-webkit-calendar-picker-indicator,
+input[type="datetime-local"].no-icons::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="password"].no-icons::-ms-reveal {
+  display: none;
+}

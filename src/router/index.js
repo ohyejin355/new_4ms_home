@@ -15,8 +15,8 @@ const router = createRouter({
         'COM_01': () => import('../views/company/company_info.vue'),
         'COM_02': () => import('../views/company/company_ceo.vue'),
         'COM_03': () => import('../views/company/company_history.vue'),
-        'COM_04': () => import('../views/company/company_map.vue'),
-        'COM_05': () => import('../views/company/company_organ.vue'),
+        'COM_04': () => import('../views/company/company_organ.vue'),
+        'COM_05': () => import('../views/company/company_map.vue'),
         'BUS_01': () => import('../views/business/BUS_01.vue'),
         'BUS_02': () => import('../views/business/BUS_02.vue'),
         'BUS_03': () => import('../views/business/BUS_03.vue'),
@@ -42,6 +42,7 @@ const router = createRouter({
       path: '/employees',
       components: {
         default: HomeView,
+        'FIN_01': () => import('../views/employees/finance/FIN_01.vue'),
         // 여기로 직원용 메뉴들이 추가됩니다.
       }
     }
