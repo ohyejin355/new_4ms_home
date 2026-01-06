@@ -112,6 +112,12 @@
   background-color: var(--color-slate-200);
 }
 
+@media (max-width: 768px) {
+  .absolute_div {
+    left: 30%;
+  }
+}
+
 .item {
   display: flex;
   margin-bottom: 2rem;
@@ -122,6 +128,12 @@
   padding-right: 2rem;
   width: 50%;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .right_text {
+    width: 30%;
+  }
 }
 
 .year {
@@ -136,9 +148,17 @@
   width: 50%;
 }
 
+@media (max-width: 768px) {
+  .left_side {
+    width: 70%;
+  }
+}
+
 .right_side {
   margin-top: 0.5rem;
   list-style-type: disc;
   list-style-position: inside;
+  text-indent: -18px;
+  padding-left: 18px;
 }
 </style>
