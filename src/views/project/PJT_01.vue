@@ -13,7 +13,7 @@
           </p>
         </div>
 
-        <div class="flex gap-2 flex-wrap mb-12 justify-center">
+        <div v-if="isDesktop" class="flex gap-2 flex-wrap mb-12 justify-center">
           <a
             class="text-slate-700 py-3 px-6 bg-slate-200 rounded-md cursor-pointer text-xs leading-4.5 hover:text-white hover:bg-teal-700 hover:shadow-lg aria-selected:text-white aria-selected:bg-teal-700 aria-selected:shadow-lg"
             v-for="year in uniqueYears"
@@ -32,7 +32,7 @@
             class="flex flex-col gap-6 w-full md:pl-8 md:border-l-2 md:border-slate-200 md:w-5/6"
           >
             <div
-              v-for="project in projectsByYear"
+              v-for="project in isDesktop ? projectsByYear : visibleProject"
               :key="project.year + project.month + project.partner + project.name"
               class="border-b border-slate-200 gap-4 items-center pb-4 md:grid md:grid-cols-12"
             >
@@ -51,21 +51,55 @@
           </div>
         </div>
       </div>
+      <TriggerComponent v-if="!isDesktop" @trigger="loadMoreProjects" />
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import Projects from './temp_projects.js'
+import TriggerComponent from './TriggerComponent.vue'
 
 const years = Projects.value.map((project) => project.year)
 const uniqueYears = [...new Set(years)].sort((a, b) => b - a)
 const selectedYear = ref(uniqueYears[0])
 const projectsByYear = ref(Projects.value.filter((project) => project.year === selectedYear.value))
 
+// 선택한 연도에 따라 필터링
 const onSelectYear = (year) => {
   selectedYear.value = year
   projectsByYear.value = Projects.value.filter((project) => project.year === year)
+}
+
+// ---무한 스크롤 관련(모바일)---
+const isDesktop = ref(false)
+const currentMobileYearIndex = ref(0)
+
+const updateWidth = () => {
+  isDesktop.value = window.innerWidth >= 1024
+}
+
+onMounted(() => {
+  updateWidth()
+  window.addEventListener('resize', updateWidth)
+})
+
+// 메모리 정리
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWidth)
+})
+
+const visibleProject = computed(() => {
+  if (!isDesktop.value) {
+    const visibleYears = uniqueYears.slice(0, currentMobileYearIndex.value + 1)
+    return Projects.value.filter((p) => visibleYears.includes(p.year))
+  }
+})
+
+// 화면에서 트리거 보여지면 실행되는 함수
+const loadMoreProjects = () => {
+  if (currentMobileYearIndex.value >= uniqueYears.length - 1) return
+  currentMobileYearIndex.value += 1
 }
 </script>
