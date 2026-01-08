@@ -23,7 +23,7 @@
             class="transition-all duration-300 text-slate-800 bg-gray-100 font-bold text-sm py-2 px-6 rounded-full cursor-pointer dragging-disable hover:bg-gray-200"
             :to="{ path: '/login', query: { menuId: 'LOGIN' } }"
           >
-            {{ isLoggedIn ? 'LOGOUT' : 'LOGIN' }}
+            LOGIN
           </router-link>
           <div v-else>
             <button
@@ -35,7 +35,7 @@
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
-              <span>{{ session.user?.name || '사용자' }}</span>
+              <span>{{ session.user?.empNm || '' }}</span>
             </button>
           </div>
         </div>
@@ -110,12 +110,17 @@
         </router-link>
         <div
           v-else
-          class="flex items-center text-slate-700 font-bold text-sm py-2 cursor-pointer hover:text-teal-600 dragging-disable"
+          class="flex items-center text-slate-700 font-bold text-sm py-2 dragging-disable"
         >
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
           </svg>
-          <span>{{ session.user.name }}</span>
+          <span>{{ session.user.empNm }}</span>
+          <div class="flex-1"></div>
+          <button
+            class="text-red-600 cursor-pointer hover:text-red-800"
+            @click="logout"
+          >로그아웃</button>
         </div>
       </div>
 
@@ -162,7 +167,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { publicMenuList, employeesMenuList } from '@/router/menu.js'
 import { userStore } from '@/store/pinia.store.js'
-import MenuGroup from './MenuGroup.vue'
+import MenuGroup from './MenuGroup.vue';
 
 const session = userStore();
 
@@ -223,6 +228,12 @@ const handleClickOutside = (event) => {
   ) {
     closeMobileMenu();
   }
+}
+
+// 로그아웃
+const logout = () => {
+  session.logout();
+  closeMobileMenu();
 }
 
 // 렌더링후 외부 클릭 이벤트 등록 및 해제

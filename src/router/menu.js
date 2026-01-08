@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 
-const currentMenuId = ref('HOME');
+const currentMenuId = ref('default');
 const publicMenuList = ref([
   {
     id: 'COM',

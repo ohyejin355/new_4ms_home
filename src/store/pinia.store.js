@@ -1,18 +1,34 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import axios from '@/api/axios.js';
+import { useRouter } from 'vue-router';
 
 export const userStore = defineStore('session', () => {
   const user = ref(null);
 
-  const login = (email, password, name) => {
-    // TO-DO: 로그인 성공여부 및 인증처리 로직 추가 필요
-    user.value = { email, password, name };
+  const login = (empNo, empNm) => {
+    user.value = { empNo, empNm };
+    sessionStorage.setItem("empNo", empNo);
+    sessionStorage.setItem("empNm", empNm);
   };
 
-  const checkState = () => {
-    // TO-DO: 자동로그인 및 세션유지 처리 로직 추가 필요
-    return user.value && user.value.email;
+  const logout = async () => {
+    try{
+      await axios.post("/api/logout");
+      user.value = null;
+      sessionStorage.removeItem("empNo");
+      sessionStorage.removeItem("empNm");
+      useRouter().push({path: '/', query: {menuId: 'HOME'}})
+    } catch {
+      // TO-DO
+      console.log("🔒", "로그아웃 실패.");
+    }
   }
 
-  return { user, login, checkState };
+  const checkState = () => {
+    sessionStorage.getItem("empNo");
+    return user.value && user.value.empNo;
+  }
+
+  return { user, login, logout, checkState };
 })
