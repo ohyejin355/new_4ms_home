@@ -11,11 +11,11 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
             </svg>
             <input
-              name="email"
+              name="empNo"
               type="text"
               class="mt-1 block w-full pl-10 pr-3 py-2 border-0 rounded-none shadow-none placeholder-gray-400 focus:outline-none focus:ring-0 sm:text-sm"
-              placeholder="이메일"
-              v-model="loginInfo.email"
+              placeholder="아이디"
+              v-model="loginInfo.empNo"
             />
           </div>
           <div class="input-container mb-6 relative">
@@ -66,82 +66,37 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { employeesMenuList } from '@/router/menu.js';
+import axios from '@/api/axios.js';
 import { userStore } from '@/store/pinia.store.js';
 
 const router = useRouter();
 const session = userStore();
 
 const loginInfo = ref({
-  email: 'admin',
+  empNo: 'admin',
   password: '4ms1001',
   remember: false,
 });
 
-// TO-DO: 서버 구축 후 사용
-// const post = async (url = '', data = {}) => {
-//   const response = await fetch('http://4ms-win:9080' + url,
-//     {
-//       method: 'POST',
-//       mode: 'cors',
-//       cache: "no-cache",
-//       credentials: 'include',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Origin':'http://localhost:5173/'
-//       },
-//       body: JSON.stringify(data),
-//     }
-//   )
-//   return response;
-// }
-
 const loginSubmit = async () => {
   // TO-DO: 서버 구축 후 사용
-  // post('/api/login', {empNo: loginInfo.value.email, passwd: loginInfo.value.password})
-  //   .then((response) => {
-  //     switch(response.data.result){
-  //       case "OK":
-  //         router.push('/');
-  //         break;
-  //       case "ID_ERROR":
-  //       case "PASS_ERROR":
-  //         alert("등록되지 않은 이메일이거나 틀린 비밀번호입니다.");
-  //         break;
-  //     }
-  //   });
-  if(loginInfo.value.email === 'admin' && loginInfo.value.password === '4ms1001'){
-    // TO-DO: 메뉴 재조회(메뉴 조회기능 개발 필요)
-    employeesMenuList.value = [
-      {
-        id: 'INF',
-        name: '내정보',
-        engName: '내 정보',
-      },
-      {
-        id: 'FIN',
-        name: '재무/회계',
-        engName: 'Finance',
-        menu: [
-          {
-            id: 'FIN_01',
-            name: '경비신청',
-            desc: '경비신청 메뉴입니다.'
-          },
-          {
-            id: 'FIN_02',
-            name: '경비내역',
-            desc: '경비내역 메뉴입니다.'
-          },
-        ]
-      },
-    ];
-    session.login(loginInfo.value.email, loginInfo.value.password, '관리자');
-    router.push({path: '/', query: {menuId: 'HOME'}});
-  } else {
-    alert("등록되지 않은 이메일이거나 틀린 비밀번호입니다.");
-  }
-}
+  axios.post('api/login', {empNo: loginInfo.value.empNo, passwd: loginInfo.value.password})
+    .then((response) => {
+
+      console.log("🗝️", response.data);
+
+      switch(response.data.result){
+        case "OK":
+          session.login(response.data.empNo, response.data.empNm);
+          router.push({path: '/', query: {menuId: 'HOME'}});
+          break;
+        case "ID_ERROR":
+        case "PASS_ERROR":
+          alert("등록되지 않은 이메일이거나 틀린 비밀번호입니다.");
+          break;
+      }
+    });
+};
 </script>
 
 <style scoped>

@@ -15,7 +15,7 @@ const route = useRoute();
 
     <!-- Navigation (LNB) -->
     <transition name="fade">
-      <navigation-component v-if="route.path === '/' && currentMenuId !== 'HOME'" />
+      <navigation-component v-if="route.path === '/' && currentMenuId !== 'HOME' && currentMenuId !== 'default'" />
     </transition>
 
     <!-- Content -->
